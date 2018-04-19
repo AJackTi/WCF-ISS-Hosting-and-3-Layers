@@ -47,7 +47,7 @@
             this.label1.Location = new System.Drawing.Point(2, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(511, 51);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 2;
             this.label1.Text = "Login";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -59,7 +59,7 @@
             this.label2.Location = new System.Drawing.Point(66, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 17);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 3;
             this.label2.Text = "UserName";
             // 
             // label3
@@ -70,7 +70,7 @@
             this.label3.Location = new System.Drawing.Point(66, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 17);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 3;
             this.label3.Text = "Password";
             // 
             // tbxUserName
@@ -83,7 +83,7 @@
             this.tbxUserName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbxUserName.SelectedText = "";
             this.tbxUserName.Size = new System.Drawing.Size(244, 23);
-            this.tbxUserName.TabIndex = 5;
+            this.tbxUserName.TabIndex = 0;
             this.tbxUserName.UseSelectable = true;
             // 
             // tbxPassword
@@ -96,7 +96,7 @@
             this.tbxPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbxPassword.SelectedText = "";
             this.tbxPassword.Size = new System.Drawing.Size(244, 23);
-            this.tbxPassword.TabIndex = 5;
+            this.tbxPassword.TabIndex = 1;
             this.tbxPassword.UseSelectable = true;
             // 
             // panel1
@@ -109,7 +109,7 @@
             this.panel1.Location = new System.Drawing.Point(9, 91);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(504, 141);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 0;
             // 
             // chkRem
             // 
@@ -119,7 +119,7 @@
             this.chkRem.Location = new System.Drawing.Point(179, 103);
             this.chkRem.Name = "chkRem";
             this.chkRem.Size = new System.Drawing.Size(119, 21);
-            this.chkRem.TabIndex = 6;
+            this.chkRem.TabIndex = 2;
             this.chkRem.Text = "Remember me";
             this.chkRem.UseVisualStyleBackColor = true;
             // 
@@ -133,7 +133,7 @@
             this.btnLogin.Location = new System.Drawing.Point(48, 247);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(162, 43);
-            this.btnLogin.TabIndex = 7;
+            this.btnLogin.TabIndex = 1;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogin.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -150,7 +150,7 @@
             this.btnExit.Location = new System.Drawing.Point(302, 247);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(162, 43);
-            this.btnExit.TabIndex = 7;
+            this.btnExit.TabIndex = 2;
             this.btnExit.Text = "EXIT";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExit.Theme = MetroFramework.MetroThemeStyle.Light;

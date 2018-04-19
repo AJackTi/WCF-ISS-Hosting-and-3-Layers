@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class SupplierBLL
+    public class EmployeesBLL
     {
     }
 }

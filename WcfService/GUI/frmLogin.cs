@@ -77,8 +77,9 @@ namespace GUI
         {
             if ((tbxUserName.Text == "admin") && (tbxPassword.Text == "admin"))
             {
-                MessageBox.Show("Login Success");
                 Save_Data();
+                frmMain frmmain = new frmMain();
+                frmmain.Show();
             }
             else
             {
