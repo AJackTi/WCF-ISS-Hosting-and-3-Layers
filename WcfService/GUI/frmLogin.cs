@@ -78,7 +78,7 @@ namespace GUI
             if ((tbxUserName.Text == "admin") && (tbxPassword.Text == "admin"))
             {
                 Save_Data();
-                frmMain frmmain = new frmMain();
+                frmSale frmmain = new frmSale();
                 frmmain.Show();
             }
             else

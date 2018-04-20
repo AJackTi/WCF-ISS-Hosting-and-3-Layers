@@ -15,5 +15,38 @@ namespace WcfService
     {
         [OperationContract]
         IEnumerable<Product> GetALlProduct();
+
+        [OperationContract]
+        void Add1PR(Product product);
+
+        [OperationContract]
+        void Del1PR(Product product);
+
+        [OperationContract]
+        void UpdateProduct(Product product);
+
+        [OperationContract]
+        IEnumerable<Order> GetAllOrders();
+
+        [OperationContract]
+        void Add1Order(Order order);
+
+        [OperationContract]
+        void Del1Order(Order order);
+
+        [OperationContract]
+        void UpdateOrder(Order order);
+
+        [OperationContract]
+        IEnumerable<Order_Detail> GetAllOrderDetails();
+
+        [OperationContract]
+        void Add1OrderDetail(Order_Detail orderDetail);
+
+        [OperationContract]
+        void DelOrderDetail(Order_Detail orderDetail);
+
+        [OperationContract]
+        void Update1OrderDetail(Order_Detail orderDetail);
     }
 }

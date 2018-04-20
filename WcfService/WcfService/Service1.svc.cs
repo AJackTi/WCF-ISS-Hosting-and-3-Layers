@@ -12,15 +12,67 @@ namespace WcfService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+        ProductsBLL productsBll = new ProductsBLL();
+        OrderBLL orderBll = new OrderBLL();
+        OrderDetailsBLL orderDetailsBll = new OrderDetailsBLL();
         public IEnumerable<Product> GetALlProduct()
         {
-            ProductsBLL productsBll = new ProductsBLL();
             return productsBll.GetALlProduct();
         }
 
-        public void Add1PR(Product pr)
+        public void Add1PR(Product product)
         {
-            throw new NotImplementedException();
+            productsBll.Add1PR(product);
+        }
+
+        public void Del1PR(Product product)
+        {
+            productsBll.Del1PR(product);
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            productsBll.UpdateProduct(product);
+        }
+
+        public IEnumerable<Order> GetAllOrders()
+        {
+            return orderBll.GetAllOrders();
+        }
+
+        public void Add1Order(Order order)
+        {
+            orderBll.Add1Order(order);
+        }
+
+        public void Del1Order(Order order)
+        {
+            orderBll.Del1Order(order);
+        }
+
+        public void UpdateOrder(Order order)
+        {
+            orderBll.UpdateOrder(order);
+        }
+
+        public IEnumerable<Order_Detail> GetAllOrderDetails()
+        {
+            return orderDetailsBll.GetAllOrderDetails();
+        }
+
+        public void Add1OrderDetail(Order_Detail orderDetail)
+        {
+            orderDetailsBll.Add1OrderDetail(orderDetail);
+        }
+
+        public void DelOrderDetail(Order_Detail orderDetail)
+        {
+            orderDetailsBll.DelOrderDetail(orderDetail);
+        }
+
+        public void Update1OrderDetail(Order_Detail orderDetail)
+        {
+            orderDetailsBll.Update1OrderDetail(orderDetail);
         }
     }
 }

@@ -16,9 +16,9 @@ namespace BLL
             db = new DataClassesDataContext();
         }
 
-        public IEnumerable<Order_Detail> GetAllOrderDetails()
+        public List<Order_Detail> GetAllOrderDetails()
         {
-            return db.Order_Details;
+            return db.Order_Details.ToList();
         }
 
         public void Add1OrderDetail(Order_Detail orderDetail)

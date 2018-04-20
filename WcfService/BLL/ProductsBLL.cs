@@ -16,22 +16,21 @@ namespace BLL
             dbClassesDataContext = new DataClassesDataContext();
         }
 
-        public IEnumerable<Product> GetALlProduct()
+        public List<Product> GetALlProduct()
         {
-            IEnumerable<Product> data = dbClassesDataContext.Products;
-            return data;
+            return dbClassesDataContext.Products.ToList();
         }
 
-        public void Add1PR(Product pr)
+        public void Add1PR(Product product)
         {
-            dbClassesDataContext.Products.InsertOnSubmit(pr);
+            dbClassesDataContext.Products.InsertOnSubmit(product);
             dbClassesDataContext.SubmitChanges();
         }
 
-        public void Del1PR(Product pr)
+        public void Del1PR(Product product)
         {
             Product delProduct =
-                dbClassesDataContext.Products.Where(w => w.ProductID == pr.ProductID).FirstOrDefault();
+                dbClassesDataContext.Products.Where(w => w.ProductID == product.ProductID).FirstOrDefault();
             dbClassesDataContext.Products.DeleteOnSubmit(delProduct);
             dbClassesDataContext.SubmitChanges();
         }
