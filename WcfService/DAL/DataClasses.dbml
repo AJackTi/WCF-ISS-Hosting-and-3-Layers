@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Ecom" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=ductrong_pc\sqlexpress;Initial Catalog=Ecom;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="EcomConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ductrong_pc\sqlexpress;Initial Catalog=Ecom;User ID=sa" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="EcomConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Customers" Member="Customers">
     <Type Name="Customer">
       <Column Name="CustomerID" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />

@@ -51,7 +51,7 @@ namespace DAL
     #endregion
 		
 		public DataClassesDataContext() : 
-				base(global::DAL.Properties.Settings.Default.EcomConnectionString, mappingSource)
+				base(global::DAL.Properties.Settings.Default.EcomConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}

@@ -32,5 +32,16 @@ namespace DAL.Properties {
                 return ((string)(this["EcomConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ductrong_pc\\sqlexpress;Initial Catalog=Ecom;User ID=sa;Password=12345" +
+            "6")]
+        public string EcomConnectionString1 {
+            get {
+                return ((string)(this["EcomConnectionString1"]));
+            }
+        }
     }
 }
