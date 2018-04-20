@@ -14,7 +14,7 @@ namespace WcfService
     public interface IService1
     {
         [OperationContract]
-        IEnumerable<Product> GetALlProduct();
+        List<Product> GetALlProduct();
 
         [OperationContract]
         void Add1PR(Product product);
@@ -26,7 +26,7 @@ namespace WcfService
         void UpdateProduct(Product product);
 
         [OperationContract]
-        IEnumerable<Order> GetAllOrders();
+        List<Order> GetAllOrders();
 
         [OperationContract]
         void Add1Order(Order order);
@@ -38,7 +38,7 @@ namespace WcfService
         void UpdateOrder(Order order);
 
         [OperationContract]
-        IEnumerable<Order_Detail> GetAllOrderDetails();
+        List<Order_Detail> GetAllOrderDetails();
 
         [OperationContract]
         void Add1OrderDetail(Order_Detail orderDetail);

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using DAL;
-using BLL;
 
 namespace WcfService
 {
@@ -12,67 +11,86 @@ namespace WcfService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        ProductsBLL productsBll = new ProductsBLL();
-        OrderBLL orderBll = new OrderBLL();
-        OrderDetailsBLL orderDetailsBll = new OrderDetailsBLL();
-        public IEnumerable<Product> GetALlProduct()
+        private DAL.DataClassesDataContext dbClassesDataContext = new DataClassesDataContext();
+        public List<Product> GetALlProduct()
         {
-            return productsBll.GetALlProduct();
+            return dbClassesDataContext.Products.ToList();
         }
 
         public void Add1PR(Product product)
         {
-            productsBll.Add1PR(product);
+            dbClassesDataContext.Products.InsertOnSubmit(product);
+            dbClassesDataContext.SubmitChanges();
         }
 
         public void Del1PR(Product product)
         {
-            productsBll.Del1PR(product);
+            Product delProduct =
+                dbClassesDataContext.Products.Where(w => w.ProductID == product.ProductID).FirstOrDefault();
+            dbClassesDataContext.Products.DeleteOnSubmit(delProduct);
+            dbClassesDataContext.SubmitChanges();
         }
 
         public void UpdateProduct(Product product)
         {
-            productsBll.UpdateProduct(product);
+            Product pro = dbClassesDataContext.Products.Where(w => w.ProductID == product.ProductID).FirstOrDefault();
+            pro.ProductID = product.ProductID;
+
+            dbClassesDataContext.SubmitChanges();
         }
 
-        public IEnumerable<Order> GetAllOrders()
+        public List<Order> GetAllOrders()
         {
-            return orderBll.GetAllOrders();
+            return dbClassesDataContext.Orders.ToList();
         }
 
         public void Add1Order(Order order)
         {
-            orderBll.Add1Order(order);
+            dbClassesDataContext.Orders.InsertOnSubmit(order);
+            dbClassesDataContext.SubmitChanges();
         }
 
         public void Del1Order(Order order)
         {
-            orderBll.Del1Order(order);
+            dbClassesDataContext.Orders.DeleteOnSubmit(order);
+            dbClassesDataContext.SubmitChanges();
         }
 
         public void UpdateOrder(Order order)
         {
-            orderBll.UpdateOrder(order);
+            var data = dbClassesDataContext.Orders.Where(w => w.OrderID == order.OrderID).FirstOrDefault();
+            data.OrderID = order.OrderID;
+            data.OrderDate = order.OrderDate;
+            data.EmployeeID = order.EmployeeID;
+            data.CustomerID = order.CustomerID;
+            dbClassesDataContext.SubmitChanges();
         }
 
-        public IEnumerable<Order_Detail> GetAllOrderDetails()
+        public List<Order_Detail> GetAllOrderDetails()
         {
-            return orderDetailsBll.GetAllOrderDetails();
+            return dbClassesDataContext.Order_Details.ToList();
         }
 
         public void Add1OrderDetail(Order_Detail orderDetail)
         {
-            orderDetailsBll.Add1OrderDetail(orderDetail);
+            dbClassesDataContext.Order_Details.InsertOnSubmit(orderDetail);
+            dbClassesDataContext.SubmitChanges();
         }
 
         public void DelOrderDetail(Order_Detail orderDetail)
         {
-            orderDetailsBll.DelOrderDetail(orderDetail);
+            dbClassesDataContext.Order_Details.DeleteOnSubmit(orderDetail);
+            dbClassesDataContext.SubmitChanges();
         }
 
         public void Update1OrderDetail(Order_Detail orderDetail)
         {
-            orderDetailsBll.Update1OrderDetail(orderDetail);
+            var data = dbClassesDataContext.Order_Details.Where(w => w.OrderID == orderDetail.OrderID).FirstOrDefault();
+            data.OrderID = orderDetail.OrderID;
+            data.ProductID = orderDetail.ProductID;
+            data.UnitPrice = orderDetail.UnitPrice;
+            data.Quantity = orderDetail.Quantity;
+            dbClassesDataContext.SubmitChanges();
         }
     }
 }

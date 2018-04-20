@@ -40,6 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web.DynamicData" />
@@ -60,7 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Service1.svc" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Service1.svc.cs">
@@ -81,13 +84,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{6b71621f-5f2c-4d81-b5fd-352af5c54b3d}</Project>
-      <Name>BLL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{cd193add-91f4-4756-8eac-dcde0faa5225}</Project>
       <Name>DAL</Name>
