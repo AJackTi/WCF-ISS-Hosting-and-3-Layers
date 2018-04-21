@@ -8,31 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
-using DAL;
-using GUI.ServiceReference;
-using WcfService;
+using BLL;
 
 namespace GUI
 {
     public partial class frmSale : MetroForm
     {
-        ServiceReference.Service1Client obj;
+        private BLL.CheckBusineesRuleProduct bllBusineesRuleProduct;
         public frmSale()
         {
-            obj = new Service1Client();
+            bllBusineesRuleProduct = new CheckBusineesRuleProduct();
             InitializeComponent();
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            try
-            {
-                this.dgvListProducts.DataSource = obj.GetALlProduct();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-            }
+            dgvListProducts.DataSource = bllBusineesRuleProduct.ViewProductObjs();
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6B71621F-5F2C-4D81-B5FD-352AF5C54B3D}</ProjectGuid>
+    <ProjectGuid>{9AD1F789-7CCC-4D5C-B70A-BA1E0FED5753}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BLL</RootNamespace>
@@ -32,7 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,18 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerBLL.cs" />
-    <Compile Include="EmployeesBLL.cs" />
-    <Compile Include="OrderBLL.cs" />
-    <Compile Include="OrderDetailsBLL.cs" />
-    <Compile Include="ProductsBLL.cs" />
+    <Compile Include="CheckBusineesRuleProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SupplierBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{cd193add-91f4-4756-8eac-dcde0faa5225}</Project>
+      <Project>{5f8a2a30-ef85-4c61-a43c-893e98ade47b}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyProperties\MyProperties.csproj">
+      <Project>{0a907b0a-4a5a-45b0-8192-455ea5cb1c90}</Project>
+      <Name>MyProperties</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

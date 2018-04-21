@@ -31,5 +31,9 @@ namespace GUI
         {
             Application.Exit();
         }
+
+        private void frmBuying_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

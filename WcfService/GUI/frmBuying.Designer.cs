@@ -51,6 +51,8 @@
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.mtbxFindProduct = new MetroFramework.Controls.MetroTextBox();
             this.mbtnFind = new MetroFramework.Controls.MetroButton();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -62,7 +64,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(818, 33);
+            this.metroLabel1.Location = new System.Drawing.Point(959, 33);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(27, 19);
             this.metroLabel1.TabIndex = 0;
@@ -71,7 +73,7 @@
             // btnPresent
             // 
             this.btnPresent.Enabled = false;
-            this.btnPresent.Location = new System.Drawing.Point(851, 29);
+            this.btnPresent.Location = new System.Drawing.Point(992, 29);
             this.btnPresent.Name = "btnPresent";
             this.btnPresent.Size = new System.Drawing.Size(109, 23);
             this.btnPresent.TabIndex = 1;
@@ -80,7 +82,7 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(4, 128);
+            this.splitContainer1.Location = new System.Drawing.Point(4, 153);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -90,8 +92,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvListProducts);
-            this.splitContainer1.Size = new System.Drawing.Size(956, 351);
-            this.splitContainer1.SplitterDistance = 188;
+            this.splitContainer1.Size = new System.Drawing.Size(1097, 391);
+            this.splitContainer1.SplitterDistance = 257;
             this.splitContainer1.TabIndex = 2;
             // 
             // trvListSuppliers
@@ -99,7 +101,7 @@
             this.trvListSuppliers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trvListSuppliers.Location = new System.Drawing.Point(0, 0);
             this.trvListSuppliers.Name = "trvListSuppliers";
-            this.trvListSuppliers.Size = new System.Drawing.Size(188, 351);
+            this.trvListSuppliers.Size = new System.Drawing.Size(257, 391);
             this.trvListSuppliers.TabIndex = 0;
             // 
             // dgvListProducts
@@ -108,12 +110,12 @@
             this.dgvListProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvListProducts.Location = new System.Drawing.Point(0, 0);
             this.dgvListProducts.Name = "dgvListProducts";
-            this.dgvListProducts.Size = new System.Drawing.Size(764, 351);
+            this.dgvListProducts.Size = new System.Drawing.Size(836, 391);
             this.dgvListProducts.TabIndex = 0;
             // 
             // mbtnBuying
             // 
-            this.mbtnBuying.Location = new System.Drawing.Point(4, 490);
+            this.mbtnBuying.Location = new System.Drawing.Point(4, 560);
             this.mbtnBuying.Name = "mbtnBuying";
             this.mbtnBuying.Size = new System.Drawing.Size(121, 23);
             this.mbtnBuying.TabIndex = 7;
@@ -122,7 +124,7 @@
             // 
             // mbtnPurchare
             // 
-            this.mbtnPurchare.Location = new System.Drawing.Point(212, 491);
+            this.mbtnPurchare.Location = new System.Drawing.Point(248, 561);
             this.mbtnPurchare.Name = "mbtnPurchare";
             this.mbtnPurchare.Size = new System.Drawing.Size(121, 23);
             this.mbtnPurchare.TabIndex = 8;
@@ -131,7 +133,7 @@
             // 
             // mbtnFeedback
             // 
-            this.mbtnFeedback.Location = new System.Drawing.Point(420, 491);
+            this.mbtnFeedback.Location = new System.Drawing.Point(492, 561);
             this.mbtnFeedback.Name = "mbtnFeedback";
             this.mbtnFeedback.Size = new System.Drawing.Size(121, 23);
             this.mbtnFeedback.TabIndex = 9;
@@ -140,7 +142,7 @@
             // 
             // mbtnExit
             // 
-            this.mbtnExit.Location = new System.Drawing.Point(836, 491);
+            this.mbtnExit.Location = new System.Drawing.Point(980, 560);
             this.mbtnExit.Name = "mbtnExit";
             this.mbtnExit.Size = new System.Drawing.Size(121, 23);
             this.mbtnExit.TabIndex = 11;
@@ -150,7 +152,7 @@
             // 
             // mbtnLogout
             // 
-            this.mbtnLogout.Location = new System.Drawing.Point(628, 490);
+            this.mbtnLogout.Location = new System.Drawing.Point(736, 560);
             this.mbtnLogout.Name = "mbtnLogout";
             this.mbtnLogout.Size = new System.Drawing.Size(121, 23);
             this.mbtnLogout.TabIndex = 10;
@@ -292,11 +294,33 @@
             this.mbtnFind.Text = "Find";
             this.mbtnFind.UseSelectable = true;
             // 
+            // metroLabel8
+            // 
+            this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel8.Location = new System.Drawing.Point(265, 127);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(836, 23);
+            this.metroLabel8.TabIndex = 13;
+            this.metroLabel8.Text = "List Products";
+            this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroLabel9
+            // 
+            this.metroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel9.Location = new System.Drawing.Point(4, 127);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(257, 23);
+            this.metroLabel9.TabIndex = 14;
+            this.metroLabel9.Text = "Suppliers";
+            this.metroLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmBuying
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(967, 525);
+            this.ClientSize = new System.Drawing.Size(1107, 596);
+            this.Controls.Add(this.metroLabel8);
+            this.Controls.Add(this.metroLabel9);
             this.Controls.Add(this.mbtnFind);
             this.Controls.Add(this.mtbxFindProduct);
             this.Controls.Add(this.metroLabel7);
@@ -320,6 +344,7 @@
             this.Controls.Add(this.metroLabel1);
             this.Name = "frmBuying";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBuying_FormClosing);
+            this.Load += new System.EventHandler(this.frmBuying_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -356,5 +381,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroTextBox mtbxFindProduct;
         private MetroFramework.Controls.MetroButton mbtnFind;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Controls.MetroLabel metroLabel9;
     }
 }

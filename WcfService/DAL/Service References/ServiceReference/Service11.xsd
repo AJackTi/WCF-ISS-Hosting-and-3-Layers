@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MyProperties" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MyProperties" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfProductObj">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductObj" nillable="true" type="tns:ProductObj" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductObj" nillable="true" type="tns:ArrayOfProductObj" />
+  <xs:complexType name="ProductObj">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProductIDObj" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductNameObj" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplierIDObj" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitInStock" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitPriceObj" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductObj" nillable="true" type="tns:ProductObj" />
+</xs:schema>
