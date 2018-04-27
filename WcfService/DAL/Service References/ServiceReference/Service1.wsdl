@@ -4,25 +4,25 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost/WcfService/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost/WcfService/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost/WcfService/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MyProperties" />
+      <xsd:import schemaLocation="http://localhost/WcfService/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IService1_GetAllProducts_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllProducts" />
+  <wsdl:message name="IService1_GetAllProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProduct" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetAllProducts_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllProductsResponse" />
+  <wsdl:message name="IService1_GetAllProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
-    <wsdl:operation name="GetAllProducts">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllProducts" message="tns:IService1_GetAllProducts_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllProductsResponse" message="tns:IService1_GetAllProducts_OutputMessage" />
+    <wsdl:operation name="GetAllProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllProduct" message="tns:IService1_GetAllProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllProductResponse" message="tns:IService1_GetAllProduct_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetAllProducts">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetAllProducts" style="document" />
+    <wsdl:operation name="GetAllProduct">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllProduct" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

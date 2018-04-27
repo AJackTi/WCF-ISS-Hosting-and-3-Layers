@@ -5,7 +5,6 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using MyProperties;
 
 namespace WcfService
 {
@@ -14,6 +13,6 @@ namespace WcfService
     public interface IService1
     {
         [OperationContract]
-        List<ProductObj> GetAllProducts();
+        List<Product> GetAllProduct();
     }
 }

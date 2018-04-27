@@ -3,27 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL.ServiceReference;
-using MyProperties;
+using WcfService;
 
 namespace DAL
 {
     public class CRUDProducts
     {
-        private ServiceReference.Service1Client obj;
+        ServiceReference.Service1Client obj;
         public CRUDProducts()
         {
-            obj = new Service1Client();
+            obj = new ServiceReference.Service1Client();
         }
-        // Get Data
-        public List<ProductObj> GetProductObjs()
+        public List<DAL.ServiceReference.Product> GetAllProduct()
         {
-            return obj.GetAllProducts();
-        }
-        // Add
-        public void Add1Pr(ProductObj productObj)
-        {
-
+            List<DAL.ServiceReference.Product> data = obj.GetAllProduct().Cast<DAL.ServiceReference.Product>().ToList();
+            return data;
         }
     }
 }

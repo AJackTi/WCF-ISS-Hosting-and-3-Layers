@@ -5,7 +5,6 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using MyProperties;
 
 namespace WcfService
 {
@@ -13,15 +12,11 @@ namespace WcfService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        private DataClassesDataContext dbClassesDataContext;
-        public Service1()
+        DataClassesDataContext data = new DataClassesDataContext();
+
+        public List<Product> GetAllProduct()
         {
-            dbClassesDataContext = new DataClassesDataContext();
-        }
-        public List<ProductObj> GetAllProducts()
-        {
-            var data = dbClassesDataContext.Products.ToList().ConvertAll<ProductObj>(null);
-            return data;
+            return data.Products.ToList();
         }
     }
 }

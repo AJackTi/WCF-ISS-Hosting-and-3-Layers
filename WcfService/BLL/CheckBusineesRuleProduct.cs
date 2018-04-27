@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
-using MyProperties;
 
 namespace BLL
 {
@@ -15,10 +14,9 @@ namespace BLL
         {
             crudProducts = new CRUDProducts();
         }
-
-        public List<ProductObj> ViewProductObjs()
+        public List<DAL.ServiceReference.Product> GetAllProduct()
         {
-            return crudProducts.GetProductObjs();
+            return crudProducts.GetAllProduct();
         }
     }
 }

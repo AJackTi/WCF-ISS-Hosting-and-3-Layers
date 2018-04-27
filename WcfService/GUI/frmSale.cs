@@ -23,7 +23,7 @@ namespace GUI
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            dgvListProducts.DataSource = bllBusineesRuleProduct.ViewProductObjs();
+            dgvListProducts.DataSource = bllBusineesRuleProduct.GetAllProduct();
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
