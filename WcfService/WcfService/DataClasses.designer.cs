@@ -30,12 +30,12 @@ namespace WcfService
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertSupplier(Supplier instance);
-    partial void UpdateSupplier(Supplier instance);
-    partial void DeleteSupplier(Supplier instance);
     partial void InsertCustomer(Customer instance);
     partial void UpdateCustomer(Customer instance);
     partial void DeleteCustomer(Customer instance);
+    partial void InsertProduct(Product instance);
+    partial void UpdateProduct(Product instance);
+    partial void DeleteProduct(Product instance);
     partial void InsertEmployee(Employee instance);
     partial void UpdateEmployee(Employee instance);
     partial void DeleteEmployee(Employee instance);
@@ -48,9 +48,6 @@ namespace WcfService
     partial void InsertOrder(Order instance);
     partial void UpdateOrder(Order instance);
     partial void DeleteOrder(Order instance);
-    partial void InsertProduct(Product instance);
-    partial void UpdateProduct(Product instance);
-    partial void DeleteProduct(Product instance);
     #endregion
 		
 		public DataClassesDataContext() : 
@@ -83,19 +80,19 @@ namespace WcfService
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Supplier> Suppliers
-		{
-			get
-			{
-				return this.GetTable<Supplier>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Customer> Customers
 		{
 			get
 			{
 				return this.GetTable<Customer>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Product> Products
+		{
+			get
+			{
+				return this.GetTable<Product>();
 			}
 		}
 		
@@ -130,217 +127,6 @@ namespace WcfService
 				return this.GetTable<Order>();
 			}
 		}
-		
-		public System.Data.Linq.Table<Product> Products
-		{
-			get
-			{
-				return this.GetTable<Product>();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Suppliers")]
-	public partial class Supplier : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _SupplierID;
-		
-		private string _CompanyName;
-		
-		private string _Address;
-		
-		private string _Phone;
-		
-		private EntitySet<Product> _Products;
-		
-		private EntityRef<Login> _Login;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnSupplierIDChanging(int value);
-    partial void OnSupplierIDChanged();
-    partial void OnCompanyNameChanging(string value);
-    partial void OnCompanyNameChanged();
-    partial void OnAddressChanging(string value);
-    partial void OnAddressChanged();
-    partial void OnPhoneChanging(string value);
-    partial void OnPhoneChanged();
-    #endregion
-		
-		public Supplier()
-		{
-			this._Products = new EntitySet<Product>(new Action<Product>(this.attach_Products), new Action<Product>(this.detach_Products));
-			this._Login = default(EntityRef<Login>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupplierID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int SupplierID
-		{
-			get
-			{
-				return this._SupplierID;
-			}
-			set
-			{
-				if ((this._SupplierID != value))
-				{
-					if (this._Login.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnSupplierIDChanging(value);
-					this.SendPropertyChanging();
-					this._SupplierID = value;
-					this.SendPropertyChanged("SupplierID");
-					this.OnSupplierIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string CompanyName
-		{
-			get
-			{
-				return this._CompanyName;
-			}
-			set
-			{
-				if ((this._CompanyName != value))
-				{
-					this.OnCompanyNameChanging(value);
-					this.SendPropertyChanging();
-					this._CompanyName = value;
-					this.SendPropertyChanged("CompanyName");
-					this.OnCompanyNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Address
-		{
-			get
-			{
-				return this._Address;
-			}
-			set
-			{
-				if ((this._Address != value))
-				{
-					this.OnAddressChanging(value);
-					this.SendPropertyChanging();
-					this._Address = value;
-					this.SendPropertyChanged("Address");
-					this.OnAddressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="NChar(12) NOT NULL", CanBeNull=false)]
-		public string Phone
-		{
-			get
-			{
-				return this._Phone;
-			}
-			set
-			{
-				if ((this._Phone != value))
-				{
-					this.OnPhoneChanging(value);
-					this.SendPropertyChanging();
-					this._Phone = value;
-					this.SendPropertyChanged("Phone");
-					this.OnPhoneChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Supplier_Product", Storage="_Products", ThisKey="SupplierID", OtherKey="SupplierID")]
-		public EntitySet<Product> Products
-		{
-			get
-			{
-				return this._Products;
-			}
-			set
-			{
-				this._Products.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Login_Supplier", Storage="_Login", ThisKey="SupplierID", OtherKey="UserID", IsForeignKey=true)]
-		public Login Login
-		{
-			get
-			{
-				return this._Login.Entity;
-			}
-			set
-			{
-				Login previousValue = this._Login.Entity;
-				if (((previousValue != value) 
-							|| (this._Login.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Login.Entity = null;
-						previousValue.Supplier = null;
-					}
-					this._Login.Entity = value;
-					if ((value != null))
-					{
-						value.Supplier = this;
-						this._SupplierID = value.UserID;
-					}
-					else
-					{
-						this._SupplierID = default(int);
-					}
-					this.SendPropertyChanged("Login");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Products(Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.Supplier = this;
-		}
-		
-		private void detach_Products(Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.Supplier = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Customers")]
@@ -351,15 +137,17 @@ namespace WcfService
 		
 		private int _CustomerID;
 		
-		private int _ContactName;
+		private string _ContactName;
 		
 		private string _Address;
 		
 		private string _Phone;
 		
-		private EntityRef<Login> _Login;
+		private int _UserID;
 		
 		private EntitySet<Order> _Orders;
+		
+		private EntityRef<Login> _Login;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -367,18 +155,20 @@ namespace WcfService
     partial void OnCreated();
     partial void OnCustomerIDChanging(int value);
     partial void OnCustomerIDChanged();
-    partial void OnContactNameChanging(int value);
+    partial void OnContactNameChanging(string value);
     partial void OnContactNameChanged();
     partial void OnAddressChanging(string value);
     partial void OnAddressChanged();
     partial void OnPhoneChanging(string value);
     partial void OnPhoneChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
     #endregion
 		
 		public Customer()
 		{
-			this._Login = default(EntityRef<Login>);
 			this._Orders = new EntitySet<Order>(new Action<Order>(this.attach_Orders), new Action<Order>(this.detach_Orders));
+			this._Login = default(EntityRef<Login>);
 			OnCreated();
 		}
 		
@@ -402,8 +192,8 @@ namespace WcfService
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactName", DbType="Int NOT NULL")]
-		public int ContactName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ContactName
 		{
 			get
 			{
@@ -462,7 +252,44 @@ namespace WcfService
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Login", Storage="_Login", ThisKey="CustomerID", OtherKey="UserID", IsUnique=true, IsForeignKey=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._Login.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Order", Storage="_Orders", ThisKey="CustomerID", OtherKey="CustomerID")]
+		public EntitySet<Order> Orders
+		{
+			get
+			{
+				return this._Orders;
+			}
+			set
+			{
+				this._Orders.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Login_Customer", Storage="_Login", ThisKey="UserID", OtherKey="UserID", IsForeignKey=true)]
 		public Login Login
 		{
 			get
@@ -479,28 +306,20 @@ namespace WcfService
 					if ((previousValue != null))
 					{
 						this._Login.Entity = null;
-						previousValue.Customer = null;
+						previousValue.Customers.Remove(this);
 					}
 					this._Login.Entity = value;
 					if ((value != null))
 					{
-						value.Customer = this;
+						value.Customers.Add(this);
+						this._UserID = value.UserID;
+					}
+					else
+					{
+						this._UserID = default(int);
 					}
 					this.SendPropertyChanged("Login");
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Order", Storage="_Orders", ThisKey="CustomerID", OtherKey="CustomerID")]
-		public EntitySet<Order> Orders
-		{
-			get
-			{
-				return this._Orders;
-			}
-			set
-			{
-				this._Orders.Assign(value);
 			}
 		}
 		
@@ -537,6 +356,168 @@ namespace WcfService
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Products")]
+	public partial class Product : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ProductID;
+		
+		private string _ProductName;
+		
+		private decimal _UnitPrice;
+		
+		private int _UnitInStock;
+		
+		private EntitySet<OrderDetail> _OrderDetails;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnProductIDChanging(int value);
+    partial void OnProductIDChanged();
+    partial void OnProductNameChanging(string value);
+    partial void OnProductNameChanged();
+    partial void OnUnitPriceChanging(decimal value);
+    partial void OnUnitPriceChanged();
+    partial void OnUnitInStockChanging(int value);
+    partial void OnUnitInStockChanged();
+    #endregion
+		
+		public Product()
+		{
+			this._OrderDetails = new EntitySet<OrderDetail>(new Action<OrderDetail>(this.attach_OrderDetails), new Action<OrderDetail>(this.detach_OrderDetails));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ProductID
+		{
+			get
+			{
+				return this._ProductID;
+			}
+			set
+			{
+				if ((this._ProductID != value))
+				{
+					this.OnProductIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProductID = value;
+					this.SendPropertyChanged("ProductID");
+					this.OnProductIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ProductName
+		{
+			get
+			{
+				return this._ProductName;
+			}
+			set
+			{
+				if ((this._ProductName != value))
+				{
+					this.OnProductNameChanging(value);
+					this.SendPropertyChanging();
+					this._ProductName = value;
+					this.SendPropertyChanged("ProductName");
+					this.OnProductNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitPrice", DbType="Money NOT NULL")]
+		public decimal UnitPrice
+		{
+			get
+			{
+				return this._UnitPrice;
+			}
+			set
+			{
+				if ((this._UnitPrice != value))
+				{
+					this.OnUnitPriceChanging(value);
+					this.SendPropertyChanging();
+					this._UnitPrice = value;
+					this.SendPropertyChanged("UnitPrice");
+					this.OnUnitPriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitInStock", DbType="Int NOT NULL")]
+		public int UnitInStock
+		{
+			get
+			{
+				return this._UnitInStock;
+			}
+			set
+			{
+				if ((this._UnitInStock != value))
+				{
+					this.OnUnitInStockChanging(value);
+					this.SendPropertyChanging();
+					this._UnitInStock = value;
+					this.SendPropertyChanged("UnitInStock");
+					this.OnUnitInStockChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_OrderDetail", Storage="_OrderDetails", ThisKey="ProductID", OtherKey="ProductID")]
+		public EntitySet<OrderDetail> OrderDetails
+		{
+			get
+			{
+				return this._OrderDetails;
+			}
+			set
+			{
+				this._OrderDetails.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_OrderDetails(OrderDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = this;
+		}
+		
+		private void detach_OrderDetails(OrderDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Employees")]
 	public partial class Employee : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -547,9 +528,11 @@ namespace WcfService
 		
 		private string _EmployeeName;
 		
-		private EntityRef<Login> _Login;
+		private int _UserID;
 		
 		private EntitySet<Order> _Orders;
+		
+		private EntityRef<Login> _Login;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -559,12 +542,14 @@ namespace WcfService
     partial void OnEmployeeIDChanged();
     partial void OnEmployeeNameChanging(string value);
     partial void OnEmployeeNameChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
     #endregion
 		
 		public Employee()
 		{
-			this._Login = default(EntityRef<Login>);
 			this._Orders = new EntitySet<Order>(new Action<Order>(this.attach_Orders), new Action<Order>(this.detach_Orders));
+			this._Login = default(EntityRef<Login>);
 			OnCreated();
 		}
 		
@@ -608,7 +593,44 @@ namespace WcfService
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_Login", Storage="_Login", ThisKey="EmployeeID", OtherKey="UserID", IsUnique=true, IsForeignKey=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._Login.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_Order", Storage="_Orders", ThisKey="EmployeeID", OtherKey="EmployeeID")]
+		public EntitySet<Order> Orders
+		{
+			get
+			{
+				return this._Orders;
+			}
+			set
+			{
+				this._Orders.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Login_Employee", Storage="_Login", ThisKey="UserID", OtherKey="UserID", IsForeignKey=true)]
 		public Login Login
 		{
 			get
@@ -625,28 +647,20 @@ namespace WcfService
 					if ((previousValue != null))
 					{
 						this._Login.Entity = null;
-						previousValue.Employee = null;
+						previousValue.Employees.Remove(this);
 					}
 					this._Login.Entity = value;
 					if ((value != null))
 					{
-						value.Employee = this;
+						value.Employees.Add(this);
+						this._UserID = value.UserID;
+					}
+					else
+					{
+						this._UserID = default(int);
 					}
 					this.SendPropertyChanged("Login");
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_Order", Storage="_Orders", ThisKey="EmployeeID", OtherKey="EmployeeID")]
-		public EntitySet<Order> Orders
-		{
-			get
-			{
-				return this._Orders;
-			}
-			set
-			{
-				this._Orders.Assign(value);
 			}
 		}
 		
@@ -693,11 +707,9 @@ namespace WcfService
 		
 		private string _Password;
 		
-		private EntityRef<Supplier> _Supplier;
+		private EntitySet<Customer> _Customers;
 		
-		private EntityRef<Customer> _Customer;
-		
-		private EntityRef<Employee> _Employee;
+		private EntitySet<Employee> _Employees;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -711,9 +723,8 @@ namespace WcfService
 		
 		public Login()
 		{
-			this._Supplier = default(EntityRef<Supplier>);
-			this._Customer = default(EntityRef<Customer>);
-			this._Employee = default(EntityRef<Employee>);
+			this._Customers = new EntitySet<Customer>(new Action<Customer>(this.attach_Customers), new Action<Customer>(this.detach_Customers));
+			this._Employees = new EntitySet<Employee>(new Action<Employee>(this.attach_Employees), new Action<Employee>(this.detach_Employees));
 			OnCreated();
 		}
 		
@@ -728,10 +739,6 @@ namespace WcfService
 			{
 				if ((this._UserID != value))
 				{
-					if ((this._Customer.HasLoadedOrAssignedValue || this._Employee.HasLoadedOrAssignedValue))
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnUserIDChanging(value);
 					this.SendPropertyChanging();
 					this._UserID = value;
@@ -761,100 +768,29 @@ namespace WcfService
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Login_Supplier", Storage="_Supplier", ThisKey="UserID", OtherKey="SupplierID", IsUnique=true, IsForeignKey=false)]
-		public Supplier Supplier
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Login_Customer", Storage="_Customers", ThisKey="UserID", OtherKey="UserID")]
+		public EntitySet<Customer> Customers
 		{
 			get
 			{
-				return this._Supplier.Entity;
+				return this._Customers;
 			}
 			set
 			{
-				Supplier previousValue = this._Supplier.Entity;
-				if (((previousValue != value) 
-							|| (this._Supplier.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Supplier.Entity = null;
-						previousValue.Login = null;
-					}
-					this._Supplier.Entity = value;
-					if ((value != null))
-					{
-						value.Login = this;
-					}
-					this.SendPropertyChanged("Supplier");
-				}
+				this._Customers.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Login", Storage="_Customer", ThisKey="UserID", OtherKey="CustomerID", IsForeignKey=true)]
-		public Customer Customer
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Login_Employee", Storage="_Employees", ThisKey="UserID", OtherKey="UserID")]
+		public EntitySet<Employee> Employees
 		{
 			get
 			{
-				return this._Customer.Entity;
+				return this._Employees;
 			}
 			set
 			{
-				Customer previousValue = this._Customer.Entity;
-				if (((previousValue != value) 
-							|| (this._Customer.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Customer.Entity = null;
-						previousValue.Login = null;
-					}
-					this._Customer.Entity = value;
-					if ((value != null))
-					{
-						value.Login = this;
-						this._UserID = value.CustomerID;
-					}
-					else
-					{
-						this._UserID = default(int);
-					}
-					this.SendPropertyChanged("Customer");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_Login", Storage="_Employee", ThisKey="UserID", OtherKey="EmployeeID", IsForeignKey=true)]
-		public Employee Employee
-		{
-			get
-			{
-				return this._Employee.Entity;
-			}
-			set
-			{
-				Employee previousValue = this._Employee.Entity;
-				if (((previousValue != value) 
-							|| (this._Employee.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Employee.Entity = null;
-						previousValue.Login = null;
-					}
-					this._Employee.Entity = value;
-					if ((value != null))
-					{
-						value.Login = this;
-						this._UserID = value.EmployeeID;
-					}
-					else
-					{
-						this._UserID = default(int);
-					}
-					this.SendPropertyChanged("Employee");
-				}
+				this._Employees.Assign(value);
 			}
 		}
 		
@@ -877,6 +813,30 @@ namespace WcfService
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
+		
+		private void attach_Customers(Customer entity)
+		{
+			this.SendPropertyChanging();
+			entity.Login = this;
+		}
+		
+		private void detach_Customers(Customer entity)
+		{
+			this.SendPropertyChanging();
+			entity.Login = null;
+		}
+		
+		private void attach_Employees(Employee entity)
+		{
+			this.SendPropertyChanging();
+			entity.Login = this;
+		}
+		
+		private void detach_Employees(Employee entity)
+		{
+			this.SendPropertyChanging();
+			entity.Login = null;
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.OrderDetails")]
@@ -893,9 +853,9 @@ namespace WcfService
 		
 		private int _Quantity;
 		
-		private EntityRef<Order> _Order;
-		
 		private EntityRef<Product> _Product;
+		
+		private EntityRef<Order> _Order;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -913,8 +873,8 @@ namespace WcfService
 		
 		public OrderDetail()
 		{
-			this._Order = default(EntityRef<Order>);
 			this._Product = default(EntityRef<Product>);
+			this._Order = default(EntityRef<Order>);
 			OnCreated();
 		}
 		
@@ -929,6 +889,10 @@ namespace WcfService
 			{
 				if ((this._OrderID != value))
 				{
+					if (this._Order.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnOrderIDChanging(value);
 					this.SendPropertyChanging();
 					this._OrderID = value;
@@ -938,7 +902,7 @@ namespace WcfService
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int ProductID
 		{
 			get
@@ -1002,35 +966,6 @@ namespace WcfService
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="OrderDetail_Order", Storage="_Order", ThisKey="OrderID", OtherKey="OrderID", IsUnique=true, IsForeignKey=false)]
-		public Order Order
-		{
-			get
-			{
-				return this._Order.Entity;
-			}
-			set
-			{
-				Order previousValue = this._Order.Entity;
-				if (((previousValue != value) 
-							|| (this._Order.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Order.Entity = null;
-						previousValue.OrderDetail = null;
-					}
-					this._Order.Entity = value;
-					if ((value != null))
-					{
-						value.OrderDetail = this;
-					}
-					this.SendPropertyChanged("Order");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_OrderDetail", Storage="_Product", ThisKey="ProductID", OtherKey="ProductID", IsForeignKey=true)]
 		public Product Product
 		{
@@ -1061,6 +996,40 @@ namespace WcfService
 						this._ProductID = default(int);
 					}
 					this.SendPropertyChanged("Product");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_OrderDetail", Storage="_Order", ThisKey="OrderID", OtherKey="OrderID", IsForeignKey=true)]
+		public Order Order
+		{
+			get
+			{
+				return this._Order.Entity;
+			}
+			set
+			{
+				Order previousValue = this._Order.Entity;
+				if (((previousValue != value) 
+							|| (this._Order.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Order.Entity = null;
+						previousValue.OrderDetails.Remove(this);
+					}
+					this._Order.Entity = value;
+					if ((value != null))
+					{
+						value.OrderDetails.Add(this);
+						this._OrderID = value.OrderID;
+					}
+					else
+					{
+						this._OrderID = default(int);
+					}
+					this.SendPropertyChanged("Order");
 				}
 			}
 		}
@@ -1100,11 +1069,11 @@ namespace WcfService
 		
 		private System.DateTime _OrderDate;
 		
+		private EntitySet<OrderDetail> _OrderDetails;
+		
 		private EntityRef<Customer> _Customer;
 		
 		private EntityRef<Employee> _Employee;
-		
-		private EntityRef<OrderDetail> _OrderDetail;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1122,9 +1091,9 @@ namespace WcfService
 		
 		public Order()
 		{
+			this._OrderDetails = new EntitySet<OrderDetail>(new Action<OrderDetail>(this.attach_OrderDetails), new Action<OrderDetail>(this.detach_OrderDetails));
 			this._Customer = default(EntityRef<Customer>);
 			this._Employee = default(EntityRef<Employee>);
-			this._OrderDetail = default(EntityRef<OrderDetail>);
 			OnCreated();
 		}
 		
@@ -1139,10 +1108,6 @@ namespace WcfService
 			{
 				if ((this._OrderID != value))
 				{
-					if (this._OrderDetail.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnOrderIDChanging(value);
 					this.SendPropertyChanging();
 					this._OrderID = value;
@@ -1220,6 +1185,19 @@ namespace WcfService
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_OrderDetail", Storage="_OrderDetails", ThisKey="OrderID", OtherKey="OrderID")]
+		public EntitySet<OrderDetail> OrderDetails
+		{
+			get
+			{
+				return this._OrderDetails;
+			}
+			set
+			{
+				this._OrderDetails.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Order", Storage="_Customer", ThisKey="CustomerID", OtherKey="CustomerID", IsForeignKey=true)]
 		public Customer Customer
 		{
@@ -1288,255 +1266,6 @@ namespace WcfService
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="OrderDetail_Order", Storage="_OrderDetail", ThisKey="OrderID", OtherKey="OrderID", IsForeignKey=true)]
-		public OrderDetail OrderDetail
-		{
-			get
-			{
-				return this._OrderDetail.Entity;
-			}
-			set
-			{
-				OrderDetail previousValue = this._OrderDetail.Entity;
-				if (((previousValue != value) 
-							|| (this._OrderDetail.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._OrderDetail.Entity = null;
-						previousValue.Order = null;
-					}
-					this._OrderDetail.Entity = value;
-					if ((value != null))
-					{
-						value.Order = this;
-						this._OrderID = value.OrderID;
-					}
-					else
-					{
-						this._OrderID = default(int);
-					}
-					this.SendPropertyChanged("OrderDetail");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Products")]
-	public partial class Product : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ProductID;
-		
-		private string _ProductName;
-		
-		private int _SupplierID;
-		
-		private decimal _UnitPrice;
-		
-		private int _UnitInStock;
-		
-		private EntitySet<OrderDetail> _OrderDetails;
-		
-		private EntityRef<Supplier> _Supplier;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnProductIDChanging(int value);
-    partial void OnProductIDChanged();
-    partial void OnProductNameChanging(string value);
-    partial void OnProductNameChanged();
-    partial void OnSupplierIDChanging(int value);
-    partial void OnSupplierIDChanged();
-    partial void OnUnitPriceChanging(decimal value);
-    partial void OnUnitPriceChanged();
-    partial void OnUnitInStockChanging(int value);
-    partial void OnUnitInStockChanged();
-    #endregion
-		
-		public Product()
-		{
-			this._OrderDetails = new EntitySet<OrderDetail>(new Action<OrderDetail>(this.attach_OrderDetails), new Action<OrderDetail>(this.detach_OrderDetails));
-			this._Supplier = default(EntityRef<Supplier>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ProductID
-		{
-			get
-			{
-				return this._ProductID;
-			}
-			set
-			{
-				if ((this._ProductID != value))
-				{
-					this.OnProductIDChanging(value);
-					this.SendPropertyChanging();
-					this._ProductID = value;
-					this.SendPropertyChanged("ProductID");
-					this.OnProductIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string ProductName
-		{
-			get
-			{
-				return this._ProductName;
-			}
-			set
-			{
-				if ((this._ProductName != value))
-				{
-					this.OnProductNameChanging(value);
-					this.SendPropertyChanging();
-					this._ProductName = value;
-					this.SendPropertyChanged("ProductName");
-					this.OnProductNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupplierID", DbType="Int NOT NULL")]
-		public int SupplierID
-		{
-			get
-			{
-				return this._SupplierID;
-			}
-			set
-			{
-				if ((this._SupplierID != value))
-				{
-					if (this._Supplier.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnSupplierIDChanging(value);
-					this.SendPropertyChanging();
-					this._SupplierID = value;
-					this.SendPropertyChanged("SupplierID");
-					this.OnSupplierIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitPrice", DbType="Money NOT NULL")]
-		public decimal UnitPrice
-		{
-			get
-			{
-				return this._UnitPrice;
-			}
-			set
-			{
-				if ((this._UnitPrice != value))
-				{
-					this.OnUnitPriceChanging(value);
-					this.SendPropertyChanging();
-					this._UnitPrice = value;
-					this.SendPropertyChanged("UnitPrice");
-					this.OnUnitPriceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitInStock", DbType="Int NOT NULL")]
-		public int UnitInStock
-		{
-			get
-			{
-				return this._UnitInStock;
-			}
-			set
-			{
-				if ((this._UnitInStock != value))
-				{
-					this.OnUnitInStockChanging(value);
-					this.SendPropertyChanging();
-					this._UnitInStock = value;
-					this.SendPropertyChanged("UnitInStock");
-					this.OnUnitInStockChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_OrderDetail", Storage="_OrderDetails", ThisKey="ProductID", OtherKey="ProductID")]
-		public EntitySet<OrderDetail> OrderDetails
-		{
-			get
-			{
-				return this._OrderDetails;
-			}
-			set
-			{
-				this._OrderDetails.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Supplier_Product", Storage="_Supplier", ThisKey="SupplierID", OtherKey="SupplierID", IsForeignKey=true)]
-		public Supplier Supplier
-		{
-			get
-			{
-				return this._Supplier.Entity;
-			}
-			set
-			{
-				Supplier previousValue = this._Supplier.Entity;
-				if (((previousValue != value) 
-							|| (this._Supplier.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Supplier.Entity = null;
-						previousValue.Products.Remove(this);
-					}
-					this._Supplier.Entity = value;
-					if ((value != null))
-					{
-						value.Products.Add(this);
-						this._SupplierID = value.SupplierID;
-					}
-					else
-					{
-						this._SupplierID = default(int);
-					}
-					this.SendPropertyChanged("Supplier");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1560,13 +1289,13 @@ namespace WcfService
 		private void attach_OrderDetails(OrderDetail entity)
 		{
 			this.SendPropertyChanging();
-			entity.Product = this;
+			entity.Order = this;
 		}
 		
 		private void detach_OrderDetails(OrderDetail entity)
 		{
 			this.SendPropertyChanging();
-			entity.Product = null;
+			entity.Order = null;
 		}
 	}
 }

@@ -34,67 +34,68 @@ namespace WcfService
 
         public void UpdateProduct(Product product)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<Supplier> GetAllSupplier()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void AddSupplier(Supplier supplier)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteSupplier(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateSupplier(Supplier supplier)
-        {
-            throw new NotImplementedException();
+            var item = data.Products.Where(t => t.ProductID == product.ProductID).FirstOrDefault();
+            item.ProductID = product.ProductID;
+            item.ProductName = product.ProductName;
+            item.UnitPrice = product.UnitPrice;
+            item.UnitInStock = product.UnitInStock;
+            data.SubmitChanges();
         }
 
         public List<Order> GetAllOrder()
         {
-            throw new NotImplementedException();
+            return data.Orders.ToList();
         }
 
-        public void AddOrder()
+        public void AddOrder(Order order)
         {
-            throw new NotImplementedException();
+            data.Orders.InsertOnSubmit(order);
+            data.SubmitChanges();
         }
 
-        public void DeleteOrder()
+        public void DeleteOrder(int id)
         {
-            throw new NotImplementedException();
+            var item = data.Orders.Where(t => t.OrderID == id).FirstOrDefault();
+            data.Orders.DeleteOnSubmit(item);
+            data.SubmitChanges();
         }
 
-        public void UpdateOrder()
+        public void UpdateOrder(Order order)
         {
-            throw new NotImplementedException();
+            var item = data.Orders.Where(t => t.OrderID == order.OrderID).FirstOrDefault();
+            item.OrderID = order.OrderID;
+            item.CustomerID = order.CustomerID;
+            item.EmployeeID = order.EmployeeID;
+            item.OrderDate = order.OrderDate;
+            data.SubmitChanges();
         }
 
         public List<OrderDetail> GetAllOrderDetail()
         {
-            throw new NotImplementedException();
+            return data.OrderDetails.ToList();
         }
 
-        public void AddOrderDetail()
+        public void AddOrderDetail(OrderDetail orderdetail)
         {
-            throw new NotImplementedException();
+            data.OrderDetails.InsertOnSubmit(orderdetail);
+            data.SubmitChanges();
         }
 
-        public void DeleteOrderDetail()
+        public void DeleteOrderDetail(int id)
         {
-            throw new NotImplementedException();
+            var item = data.OrderDetails.Where(t => t.OrderID == id).FirstOrDefault();
+            data.OrderDetails.DeleteOnSubmit(item);
+            data.SubmitChanges();
         }
 
-        public void UpdateOrderDetail()
+        public void UpdateOrderDetail(OrderDetail orderdetail)
         {
-            throw new NotImplementedException();
+            var item = data.OrderDetails.Where(t => t.OrderID == orderdetail.OrderID).FirstOrDefault();
+            item.OrderID = orderdetail.OrderID;
+            item.ProductID = orderdetail.ProductID;
+            item.UnitPrice = orderdetail.UnitPrice;
+            item.Quantity = orderdetail.Quantity;
+            data.SubmitChanges();
         }
     }
 }

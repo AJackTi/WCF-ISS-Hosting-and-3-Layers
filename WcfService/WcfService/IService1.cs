@@ -21,28 +21,20 @@ namespace WcfService
         [OperationContract]
         void UpdateProduct(Product product);
         [OperationContract]
-        List<Supplier> GetAllSupplier();
-        [OperationContract]
-        void AddSupplier(Supplier supplier);
-        [OperationContract]
-        void DeleteSupplier(int id);
-        [OperationContract]
-        void UpdateSupplier(Supplier supplier);
-        [OperationContract]
         List<Order> GetAllOrder();
         [OperationContract]
-        void AddOrder();
+        void AddOrder(Order order);
         [OperationContract]
-        void DeleteOrder();
+        void DeleteOrder(int id);
         [OperationContract]
-        void UpdateOrder();
+        void UpdateOrder(Order order);
         [OperationContract]
         List<OrderDetail> GetAllOrderDetail();
         [OperationContract]
-        void AddOrderDetail();
+        void AddOrderDetail(OrderDetail orderdetail);
         [OperationContract]
-        void DeleteOrderDetail();
+        void DeleteOrderDetail(int id);
         [OperationContract]
-        void UpdateOrderDetail();
+        void UpdateOrderDetail(OrderDetail orderdetail);
     }
 }
