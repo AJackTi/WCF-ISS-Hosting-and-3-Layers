@@ -14,5 +14,35 @@ namespace WcfService
     {
         [OperationContract]
         List<Product> GetAllProduct();
+        [OperationContract]
+        void AddProduct(Product product);
+        [OperationContract]
+        void DeleteProduct(int id);
+        [OperationContract]
+        void UpdateProduct(Product product);
+        [OperationContract]
+        List<Supplier> GetAllSupplier();
+        [OperationContract]
+        void AddSupplier(Supplier supplier);
+        [OperationContract]
+        void DeleteSupplier(int id);
+        [OperationContract]
+        void UpdateSupplier(Supplier supplier);
+        [OperationContract]
+        List<Order> GetAllOrder();
+        [OperationContract]
+        void AddOrder();
+        [OperationContract]
+        void DeleteOrder();
+        [OperationContract]
+        void UpdateOrder();
+        [OperationContract]
+        List<OrderDetail> GetAllOrderDetail();
+        [OperationContract]
+        void AddOrderDetail();
+        [OperationContract]
+        void DeleteOrderDetail();
+        [OperationContract]
+        void UpdateOrderDetail();
     }
 }

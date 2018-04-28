@@ -18,5 +18,83 @@ namespace WcfService
         {
             return data.Products.ToList();
         }
+
+        public void AddProduct(Product product)
+        {
+            data.Products.InsertOnSubmit(product);
+            data.SubmitChanges();
+        }
+
+        public void DeleteProduct(int id)
+        {
+            var item = data.Products.Where(t => t.ProductID == id).FirstOrDefault();
+            data.Products.DeleteOnSubmit(item);
+            data.SubmitChanges();
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Supplier> GetAllSupplier()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddSupplier(Supplier supplier)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteSupplier(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateSupplier(Supplier supplier)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Order> GetAllOrder()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddOrder()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteOrder()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateOrder()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<OrderDetail> GetAllOrderDetail()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddOrderDetail()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteOrderDetail()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateOrderDetail()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
