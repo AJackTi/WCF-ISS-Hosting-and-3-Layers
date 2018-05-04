@@ -31,8 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tbxUserName = new MetroFramework.Controls.MetroTextBox();
-            this.tbxPassword = new MetroFramework.Controls.MetroTextBox();
+            this.mtbxUserName = new MetroFramework.Controls.MetroTextBox();
+            this.mtbxPassword = new MetroFramework.Controls.MetroTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.chkRem = new System.Windows.Forms.CheckBox();
             this.btnLogin = new MetroFramework.Controls.MetroButton();
@@ -73,37 +73,37 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Password";
             // 
-            // tbxUserName
+            // mtbxUserName
             // 
-            this.tbxUserName.Lines = new string[0];
-            this.tbxUserName.Location = new System.Drawing.Point(162, 19);
-            this.tbxUserName.MaxLength = 32767;
-            this.tbxUserName.Name = "tbxUserName";
-            this.tbxUserName.PasswordChar = '\0';
-            this.tbxUserName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tbxUserName.SelectedText = "";
-            this.tbxUserName.Size = new System.Drawing.Size(244, 23);
-            this.tbxUserName.TabIndex = 0;
-            this.tbxUserName.UseSelectable = true;
+            this.mtbxUserName.Lines = new string[0];
+            this.mtbxUserName.Location = new System.Drawing.Point(162, 19);
+            this.mtbxUserName.MaxLength = 32767;
+            this.mtbxUserName.Name = "mtbxUserName";
+            this.mtbxUserName.PasswordChar = '\0';
+            this.mtbxUserName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mtbxUserName.SelectedText = "";
+            this.mtbxUserName.Size = new System.Drawing.Size(244, 23);
+            this.mtbxUserName.TabIndex = 0;
+            this.mtbxUserName.UseSelectable = true;
             // 
-            // tbxPassword
+            // mtbxPassword
             // 
-            this.tbxPassword.Lines = new string[0];
-            this.tbxPassword.Location = new System.Drawing.Point(162, 54);
-            this.tbxPassword.MaxLength = 32767;
-            this.tbxPassword.Name = "tbxPassword";
-            this.tbxPassword.PasswordChar = '*';
-            this.tbxPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tbxPassword.SelectedText = "";
-            this.tbxPassword.Size = new System.Drawing.Size(244, 23);
-            this.tbxPassword.TabIndex = 1;
-            this.tbxPassword.UseSelectable = true;
+            this.mtbxPassword.Lines = new string[0];
+            this.mtbxPassword.Location = new System.Drawing.Point(162, 54);
+            this.mtbxPassword.MaxLength = 32767;
+            this.mtbxPassword.Name = "mtbxPassword";
+            this.mtbxPassword.PasswordChar = '*';
+            this.mtbxPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mtbxPassword.SelectedText = "";
+            this.mtbxPassword.Size = new System.Drawing.Size(244, 23);
+            this.mtbxPassword.TabIndex = 1;
+            this.mtbxPassword.UseSelectable = true;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.chkRem);
-            this.panel1.Controls.Add(this.tbxUserName);
-            this.panel1.Controls.Add(this.tbxPassword);
+            this.panel1.Controls.Add(this.mtbxUserName);
+            this.panel1.Controls.Add(this.mtbxPassword);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(9, 91);
@@ -169,7 +169,6 @@
             this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -181,8 +180,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private MetroFramework.Controls.MetroTextBox tbxUserName;
-        private MetroFramework.Controls.MetroTextBox tbxPassword;
+        private MetroFramework.Controls.MetroTextBox mtbxUserName;
+        private MetroFramework.Controls.MetroTextBox mtbxPassword;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox chkRem;
         private MetroFramework.Controls.MetroButton btnLogin;

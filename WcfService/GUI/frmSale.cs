@@ -15,6 +15,7 @@ namespace GUI
 {
     public partial class frmSale : MetroForm
     {
+        
         private BLL.CheckBusineesRuleProduct bllBusineesRuleProduct;
         public frmSale()
         {
@@ -22,11 +23,24 @@ namespace GUI
             InitializeComponent();
         }
 
+        /******************************************
+         /** Description: Load TreeView and DataGridView
+         /** Params: 
+         /** Write by: DANG VO DUC TRONG
+         /** Create date: 4/5/2018
+         ******************************************/
         private void frmMain_Load(object sender, EventArgs e)
         {
             PopulateTreeView();
             DisplayToDataGrid(bllBusineesRuleProduct.GetAllProduct());
         }
+
+        /******************************************
+         /** Description: FormClosing
+         /** Params: 
+         /** Write by: DANG VO DUC TRONG
+         /** Create date: 4/5/2018
+         ******************************************/
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -75,7 +89,12 @@ namespace GUI
         private void btnLogout_Click(object sender, EventArgs e)
         {
         }
-
+        /******************************************
+         /** Description: Process when clicked node
+         /** Params: 
+         /** Write by: DANG VO DUC TRONG
+         /** Create date: 4/5/2018
+         ******************************************/
         private void trvListProductType_AfterSelect(object sender, TreeViewEventArgs e)
         {
             if (this.trvListProductType.SelectedNode != null && this.trvListProductType.SelectedNode.Level >= 0)
@@ -86,7 +105,12 @@ namespace GUI
                 this.mtbxProductType.Text = e.Node.Text;
             }
         }
-
+        /******************************************
+         /** Description: Process when clicked row in datagridview
+         /** Params: 
+         /** Write by: DANG VO DUC TRONG
+         /** Create date: 4/5/2018
+         ******************************************/
         private void dgvListProducts_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {
             if (this.dgvListProducts.SelectedRows.Count > 0)
@@ -97,7 +121,12 @@ namespace GUI
                 this.mtbxProductType.Text = this.dgvListProducts.SelectedRows[0].Cells[4].Value.ToString();
             }
         }
-
+        /******************************************
+         /** Description: Process when clicked cell in datagridview
+         /** Params: 
+         /** Write by: DANG VO DUC TRONG
+         /** Create date: 4/5/2018
+         ******************************************/
         private void dgvListProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -152,6 +181,23 @@ namespace GUI
         private void btnDelete_Click(object sender, EventArgs e)
         {
             // Lay cell dau tien cua dong duoc chon => lay id product de xoa
+            MessageBox.Show(this.dgvListProducts.SelectedRows[0].Cells[0].Value.ToString());
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ProductsObj productObj = new ProductsObj();
+            productObj.ProductNameObj = this.mtbxNameProduct.Text;
+            productObj.ProductTypeObj = this.mtbxProductType.Text;
+            productObj.UnitPriceObj = decimal.Parse( this.mtbxPrice.Text);
+            productObj.UnitInStockObj = int.Parse( this.mtbxStock.Text);
+            // thieu ID
+            bllBusineesRuleProduct.AddProduct(productObj);
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost/WcfService/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost/WcfService/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost/WcfService/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService" />
+      <xsd:import schemaLocation="http://localhost/WcfService/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/MyProperties" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_GetAllProduct_InputMessage">
@@ -91,6 +92,12 @@
   <wsdl:message name="IService1_UpdateOrderDetail_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateOrderDetailResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_CheckLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckLogin" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CheckLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckLoginResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetAllProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllProduct" message="tns:IService1_GetAllProduct_InputMessage" />
@@ -147,6 +154,10 @@
     <wsdl:operation name="UpdateOrderDetail">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateOrderDetail" message="tns:IService1_UpdateOrderDetail_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateOrderDetailResponse" message="tns:IService1_UpdateOrderDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CheckLogin" message="tns:IService1_CheckLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CheckLoginResponse" message="tns:IService1_CheckLogin_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -270,6 +281,15 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateOrderDetail">
       <soap:operation soapAction="http://tempuri.org/IService1/UpdateOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLogin">
+      <soap:operation soapAction="http://tempuri.org/IService1/CheckLogin" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

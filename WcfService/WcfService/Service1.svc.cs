@@ -54,8 +54,14 @@ namespace WcfService
             return lstProductTemp;
         }
 
-        public void AddProduct(Product product)
+        public void AddProduct(ProductsObj productObj)
         {
+            Product product = new Product();
+            product.ProductID = productObj.ProductIDObj;
+            product.ProductName = productObj.ProductNameObj;
+            product.UnitPrice = productObj.UnitPriceObj;
+            product.UnitInStock = productObj.UnitInStockObj;
+            product.ProductType = productObj.ProductTypeObj;
             data.Products.InsertOnSubmit(product);
             data.SubmitChanges();
         }
@@ -67,13 +73,14 @@ namespace WcfService
             data.SubmitChanges();
         }
 
-        public void UpdateProduct(Product product)
+        public void UpdateProduct(ProductsObj productObj)
         {
-            var item = data.Products.Where(t => t.ProductID == product.ProductID).FirstOrDefault();
-            item.ProductID = product.ProductID;
-            item.ProductName = product.ProductName;
-            item.UnitPrice = product.UnitPrice;
-            item.UnitInStock = product.UnitInStock;
+            var item = data.Products.Where(t => t.ProductID == productObj.ProductIDObj).FirstOrDefault();
+            item.ProductID = productObj.ProductIDObj;
+            item.ProductName = productObj.ProductNameObj;
+            item.UnitPrice = productObj.UnitPriceObj;
+            item.UnitInStock = productObj.UnitInStockObj;
+            item.ProductType = productObj.ProductTypeObj;
             data.SubmitChanges();
         }
 
@@ -131,6 +138,14 @@ namespace WcfService
             item.UnitPrice = orderdetail.UnitPrice;
             item.Quantity = orderdetail.Quantity;
             data.SubmitChanges();
+        }
+
+        public bool CheckLogin(string username, string password)
+        {
+            var item = data.Logins.Where(t => t.UserName == username).FirstOrDefault();
+            if (item.Password == password)
+                return true;
+            return false;
         }
     }
 }

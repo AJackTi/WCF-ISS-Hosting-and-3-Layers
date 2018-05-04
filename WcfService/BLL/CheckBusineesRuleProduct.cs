@@ -34,5 +34,10 @@ namespace BLL
         {
             crudProducts.DeleteProduct(id);
         }
+
+        public void AddProduct(ProductsObj productObj)
+        {
+            crudProducts.AddProduct(productObj);
+        }
     }
 }

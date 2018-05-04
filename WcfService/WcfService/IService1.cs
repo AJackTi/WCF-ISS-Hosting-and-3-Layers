@@ -21,11 +21,11 @@ namespace WcfService
         [OperationContract]
         List<Product_Temp> GetProductFromType(string producttype);
         [OperationContract]
-        void AddProduct(Product product);
+        void AddProduct(ProductsObj productObj);
         [OperationContract]
         void DeleteProduct(int id);
         [OperationContract]
-        void UpdateProduct(Product product);
+        void UpdateProduct(ProductsObj productObj);
         [OperationContract]
         List<Order> GetAllOrder();
         [OperationContract]
@@ -42,5 +42,8 @@ namespace WcfService
         void DeleteOrderDetail(int id);
         [OperationContract]
         void UpdateOrderDetail(OrderDetail orderdetail);
+
+        [OperationContract]
+        bool CheckLogin(string username, string password);
     }
 }

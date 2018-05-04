@@ -62,6 +62,14 @@ namespace GUI
         public void DisplayToDataGrid(List<ProductsObj> listProduct)
         {
             this.dgvListProducts.DataSource = listProduct;
+            this.dgvListProducts.Columns[0].HeaderText = "Product ID";
+            this.dgvListProducts.Columns[1].HeaderText = "Product Name";
+            this.dgvListProducts.Columns[2].HeaderText = "Product Price";
+            this.dgvListProducts.Columns[3].HeaderText = "Stock";
+            this.dgvListProducts.Columns[4].HeaderText = "Product Type";
+
+            this.dgvListProducts.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvListProducts.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
         private void trvListProductType_AfterSelect(object sender, TreeViewEventArgs e)

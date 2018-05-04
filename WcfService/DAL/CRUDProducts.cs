@@ -68,5 +68,10 @@ namespace DAL
         {
             obj.DeleteProduct(id);
         }
+
+        public void AddProduct(ProductsObj productObj)
+        {
+            obj.AddProduct(productObj);
+        }
     }
 }

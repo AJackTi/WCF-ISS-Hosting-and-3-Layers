@@ -8,24 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using BLL;
 
 namespace GUI
 {
     public partial class frmLogin : MetroForm
     {
+        CheckBusineesRuleLogins checkBusineesRuleLogins;
         public frmLogin()
         {
             InitializeComponent();
+            checkBusineesRuleLogins = new CheckBusineesRuleLogins();
             Init_Data();
-        }
-
-        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Do you want to exit?", "Exit?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) !=
-                System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -37,14 +31,14 @@ namespace GUI
         {
             if (chkRem.Checked)
             {
-                Properties.Settings.Default.UserName = tbxUserName.Text;
-                Properties.Settings.Default.Password = tbxPassword.Text;
+                Properties.Settings.Default.UserName = mtbxUserName.Text;
+                Properties.Settings.Default.Password = mtbxPassword.Text;
                 Properties.Settings.Default.Remme = "yes";
                 Properties.Settings.Default.Save();
             }
             else
             {
-                Properties.Settings.Default.UserName = tbxUserName.Text;
+                Properties.Settings.Default.UserName = mtbxUserName.Text;
                 Properties.Settings.Default.Password = "";
                 Properties.Settings.Default.Remme = "no";
                 Properties.Settings.Default.Save();
@@ -57,33 +51,36 @@ namespace GUI
             {
                 if (Properties.Settings.Default.Remme=="yes")
                 {
-                    tbxUserName.Text = Properties.Settings.Default.UserName;
-                    tbxPassword.Text = Properties.Settings.Default.Password;
+                    mtbxUserName.Text = Properties.Settings.Default.UserName;
+                    mtbxPassword.Text = Properties.Settings.Default.Password;
                     chkRem.Checked = true;
                 }
                 else
                 {
-                    tbxUserName.Text = Properties.Settings.Default.UserName;
+                    mtbxUserName.Text = Properties.Settings.Default.UserName;
                 }
             }
         }
 
-        private bool Check_Account(string User, string Pass)
-        {
-            return false;
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if ((tbxUserName.Text == "admin") && (tbxPassword.Text == "admin"))
+            if(checkBusineesRuleLogins.CheckLogin(this.mtbxUserName.Text, this.mtbxPassword.Text))
             {
-                Save_Data();
-                frmSale frmmain = new frmSale();
-                frmmain.Show();
+                if(this.mtbxUserName.Text == "admin")
+                {
+                    frmSale frmsale = new frmSale();
+                    frmsale.Show();
+                }
+                else
+                {
+                    frmBuying frmbuying = new frmBuying();
+                    frmbuying.Show();
+                }
             }
             else
             {
-                MessageBox.Show("Account is not exist");
+                MessageBox.Show("Username or Password is not correct! Try again!!!");
+                return;
             }
         }
     }

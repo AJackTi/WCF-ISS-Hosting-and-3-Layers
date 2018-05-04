@@ -895,10 +895,10 @@ namespace DAL.ServiceReference {
         System.Threading.Tasks.Task<DAL.ServiceReference.Product_Temp[]> GetProductFromTypeAsync(string producttype);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddProduct", ReplyAction="http://tempuri.org/IService1/AddProductResponse")]
-        void AddProduct(DAL.ServiceReference.Product product);
+        void AddProduct(MyProperties.ProductsObj productObj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddProduct", ReplyAction="http://tempuri.org/IService1/AddProductResponse")]
-        System.Threading.Tasks.Task AddProductAsync(DAL.ServiceReference.Product product);
+        System.Threading.Tasks.Task AddProductAsync(MyProperties.ProductsObj productObj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteProduct", ReplyAction="http://tempuri.org/IService1/DeleteProductResponse")]
         void DeleteProduct(int id);
@@ -959,6 +959,12 @@ namespace DAL.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateOrderDetail", ReplyAction="http://tempuri.org/IService1/UpdateOrderDetailResponse")]
         System.Threading.Tasks.Task UpdateOrderDetailAsync(DAL.ServiceReference.OrderDetail orderdetail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CheckLogin", ReplyAction="http://tempuri.org/IService1/CheckLoginResponse")]
+        bool CheckLogin(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CheckLogin", ReplyAction="http://tempuri.org/IService1/CheckLoginResponse")]
+        System.Threading.Tasks.Task<bool> CheckLoginAsync(string username, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1012,12 +1018,12 @@ namespace DAL.ServiceReference {
             return base.Channel.GetProductFromTypeAsync(producttype);
         }
         
-        public void AddProduct(DAL.ServiceReference.Product product) {
-            base.Channel.AddProduct(product);
+        public void AddProduct(MyProperties.ProductsObj productObj) {
+            base.Channel.AddProduct(productObj);
         }
         
-        public System.Threading.Tasks.Task AddProductAsync(DAL.ServiceReference.Product product) {
-            return base.Channel.AddProductAsync(product);
+        public System.Threading.Tasks.Task AddProductAsync(MyProperties.ProductsObj productObj) {
+            return base.Channel.AddProductAsync(productObj);
         }
         
         public void DeleteProduct(int id) {
@@ -1098,6 +1104,14 @@ namespace DAL.ServiceReference {
         
         public System.Threading.Tasks.Task UpdateOrderDetailAsync(DAL.ServiceReference.OrderDetail orderdetail) {
             return base.Channel.UpdateOrderDetailAsync(orderdetail);
+        }
+        
+        public bool CheckLogin(string username, string password) {
+            return base.Channel.CheckLogin(username, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CheckLoginAsync(string username, string password) {
+            return base.Channel.CheckLoginAsync(username, password);
         }
     }
 }
