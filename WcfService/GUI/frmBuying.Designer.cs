@@ -31,16 +31,14 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btnPresent = new MetroFramework.Controls.MetroButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.trvListSuppliers = new System.Windows.Forms.TreeView();
+            this.trvListProductType = new System.Windows.Forms.TreeView();
             this.dgvListProducts = new System.Windows.Forms.DataGridView();
             this.mbtnBuying = new MetroFramework.Controls.MetroButton();
             this.mbtnPurchare = new MetroFramework.Controls.MetroButton();
             this.mbtnFeedback = new MetroFramework.Controls.MetroButton();
             this.mbtnExit = new MetroFramework.Controls.MetroButton();
             this.mbtnLogout = new MetroFramework.Controls.MetroButton();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.mtbxSupplier = new MetroFramework.Controls.MetroTextBox();
             this.mtbxNameProduct = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
@@ -53,6 +51,9 @@
             this.mbtnFind = new MetroFramework.Controls.MetroButton();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.btnMyCart = new System.Windows.Forms.Button();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.mtbxProductType = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -87,7 +88,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.trvListSuppliers);
+            this.splitContainer1.Panel1.Controls.Add(this.trvListProductType);
             // 
             // splitContainer1.Panel2
             // 
@@ -96,13 +97,14 @@
             this.splitContainer1.SplitterDistance = 257;
             this.splitContainer1.TabIndex = 2;
             // 
-            // trvListSuppliers
+            // trvListProductType
             // 
-            this.trvListSuppliers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trvListSuppliers.Location = new System.Drawing.Point(0, 0);
-            this.trvListSuppliers.Name = "trvListSuppliers";
-            this.trvListSuppliers.Size = new System.Drawing.Size(257, 391);
-            this.trvListSuppliers.TabIndex = 0;
+            this.trvListProductType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trvListProductType.Location = new System.Drawing.Point(0, 0);
+            this.trvListProductType.Name = "trvListProductType";
+            this.trvListProductType.Size = new System.Drawing.Size(257, 391);
+            this.trvListProductType.TabIndex = 0;
+            this.trvListProductType.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvListProductType_AfterSelect);
             // 
             // dgvListProducts
             // 
@@ -112,6 +114,8 @@
             this.dgvListProducts.Name = "dgvListProducts";
             this.dgvListProducts.Size = new System.Drawing.Size(836, 391);
             this.dgvListProducts.TabIndex = 0;
+            this.dgvListProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListProducts_CellClick);
+            this.dgvListProducts.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dgvListProducts_RowStateChanged);
             // 
             // mbtnBuying
             // 
@@ -159,41 +163,20 @@
             this.mbtnLogout.Text = "Log out";
             this.mbtnLogout.UseSelectable = true;
             // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(13, 29);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(57, 19);
-            this.metroLabel2.TabIndex = 8;
-            this.metroLabel2.Text = "Supplier";
-            // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(13, 79);
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel3.Location = new System.Drawing.Point(13, 84);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(95, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(97, 19);
             this.metroLabel3.TabIndex = 9;
             this.metroLabel3.Text = "Name Product";
-            // 
-            // mtbxSupplier
-            // 
-            this.mtbxSupplier.Lines = new string[0];
-            this.mtbxSupplier.Location = new System.Drawing.Point(114, 29);
-            this.mtbxSupplier.MaxLength = 32767;
-            this.mtbxSupplier.Name = "mtbxSupplier";
-            this.mtbxSupplier.PasswordChar = '\0';
-            this.mtbxSupplier.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.mtbxSupplier.SelectedText = "";
-            this.mtbxSupplier.Size = new System.Drawing.Size(147, 23);
-            this.mtbxSupplier.TabIndex = 0;
-            this.mtbxSupplier.UseSelectable = true;
             // 
             // mtbxNameProduct
             // 
             this.mtbxNameProduct.Lines = new string[0];
-            this.mtbxNameProduct.Location = new System.Drawing.Point(114, 75);
+            this.mtbxNameProduct.Location = new System.Drawing.Point(125, 79);
             this.mtbxNameProduct.MaxLength = 32767;
             this.mtbxNameProduct.Name = "mtbxNameProduct";
             this.mtbxNameProduct.PasswordChar = '\0';
@@ -206,6 +189,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel4.Location = new System.Drawing.Point(316, 29);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(38, 19);
@@ -215,9 +199,10 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(314, 79);
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel5.Location = new System.Drawing.Point(316, 84);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(40, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(42, 19);
             this.metroLabel5.TabIndex = 9;
             this.metroLabel5.Text = "Stock";
             // 
@@ -230,35 +215,36 @@
             this.mtbxPrice.PasswordChar = '\0';
             this.mtbxPrice.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtbxPrice.SelectedText = "";
-            this.mtbxPrice.Size = new System.Drawing.Size(147, 23);
+            this.mtbxPrice.Size = new System.Drawing.Size(156, 23);
             this.mtbxPrice.TabIndex = 2;
             this.mtbxPrice.UseSelectable = true;
             // 
             // mtbxStock
             // 
             this.mtbxStock.Lines = new string[0];
-            this.mtbxStock.Location = new System.Drawing.Point(360, 75);
+            this.mtbxStock.Location = new System.Drawing.Point(362, 80);
             this.mtbxStock.MaxLength = 32767;
             this.mtbxStock.Name = "mtbxStock";
             this.mtbxStock.PasswordChar = '\0';
             this.mtbxStock.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtbxStock.SelectedText = "";
-            this.mtbxStock.Size = new System.Drawing.Size(147, 23);
+            this.mtbxStock.Size = new System.Drawing.Size(154, 23);
             this.mtbxStock.TabIndex = 3;
             this.mtbxStock.UseSelectable = true;
             // 
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
+            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel6.Location = new System.Drawing.Point(539, 29);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(58, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(63, 19);
             this.metroLabel6.TabIndex = 8;
             this.metroLabel6.Text = "Quantity";
             // 
             // nudQuantity
             // 
-            this.nudQuantity.Location = new System.Drawing.Point(603, 28);
+            this.nudQuantity.Location = new System.Drawing.Point(612, 28);
             this.nudQuantity.Name = "nudQuantity";
             this.nudQuantity.Size = new System.Drawing.Size(54, 20);
             this.nudQuantity.TabIndex = 4;
@@ -266,33 +252,35 @@
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(539, 79);
+            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel7.Location = new System.Drawing.Point(539, 84);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(34, 19);
+            this.metroLabel7.Size = new System.Drawing.Size(35, 19);
             this.metroLabel7.TabIndex = 12;
             this.metroLabel7.Text = "Find";
             // 
             // mtbxFindProduct
             // 
             this.mtbxFindProduct.Lines = new string[0];
-            this.mtbxFindProduct.Location = new System.Drawing.Point(603, 75);
+            this.mtbxFindProduct.Location = new System.Drawing.Point(612, 80);
             this.mtbxFindProduct.MaxLength = 32767;
             this.mtbxFindProduct.Name = "mtbxFindProduct";
             this.mtbxFindProduct.PasswordChar = '\0';
             this.mtbxFindProduct.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtbxFindProduct.SelectedText = "";
-            this.mtbxFindProduct.Size = new System.Drawing.Size(137, 23);
+            this.mtbxFindProduct.Size = new System.Drawing.Size(156, 23);
             this.mtbxFindProduct.TabIndex = 5;
             this.mtbxFindProduct.UseSelectable = true;
             // 
             // mbtnFind
             // 
-            this.mbtnFind.Location = new System.Drawing.Point(746, 75);
+            this.mbtnFind.Location = new System.Drawing.Point(782, 80);
             this.mbtnFind.Name = "mbtnFind";
             this.mbtnFind.Size = new System.Drawing.Size(75, 23);
             this.mbtnFind.TabIndex = 6;
             this.mbtnFind.Text = "Find";
             this.mbtnFind.UseSelectable = true;
+            this.mbtnFind.Click += new System.EventHandler(this.mbtnFind_Click);
             // 
             // metroLabel8
             // 
@@ -311,14 +299,53 @@
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(257, 23);
             this.metroLabel9.TabIndex = 14;
-            this.metroLabel9.Text = "Suppliers";
+            this.metroLabel9.Text = "List Product Type";
             this.metroLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnMyCart
+            // 
+            this.btnMyCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMyCart.Image = global::GUI.Properties.Resources.shopping_cart;
+            this.btnMyCart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMyCart.Location = new System.Drawing.Point(959, 63);
+            this.btnMyCart.Name = "btnMyCart";
+            this.btnMyCart.Size = new System.Drawing.Size(101, 46);
+            this.btnMyCart.TabIndex = 15;
+            this.btnMyCart.Text = "My Cart";
+            this.btnMyCart.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMyCart.UseVisualStyleBackColor = true;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.Location = new System.Drawing.Point(13, 29);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(89, 19);
+            this.metroLabel2.TabIndex = 16;
+            this.metroLabel2.Text = "Product Type";
+            // 
+            // mtbxProductType
+            // 
+            this.mtbxProductType.Lines = new string[0];
+            this.mtbxProductType.Location = new System.Drawing.Point(125, 28);
+            this.mtbxProductType.MaxLength = 32767;
+            this.mtbxProductType.Name = "mtbxProductType";
+            this.mtbxProductType.PasswordChar = '\0';
+            this.mtbxProductType.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mtbxProductType.SelectedText = "";
+            this.mtbxProductType.Size = new System.Drawing.Size(147, 23);
+            this.mtbxProductType.TabIndex = 17;
+            this.mtbxProductType.UseSelectable = true;
             // 
             // frmBuying
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 596);
+            this.Controls.Add(this.mtbxProductType);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.btnMyCart);
             this.Controls.Add(this.metroLabel8);
             this.Controls.Add(this.metroLabel9);
             this.Controls.Add(this.mbtnFind);
@@ -330,10 +357,8 @@
             this.Controls.Add(this.mtbxPrice);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroLabel6);
-            this.Controls.Add(this.mtbxSupplier);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.mbtnLogout);
             this.Controls.Add(this.mbtnExit);
             this.Controls.Add(this.mbtnFeedback);
@@ -342,6 +367,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.btnPresent);
             this.Controls.Add(this.metroLabel1);
+            this.MaximizeBox = false;
             this.Name = "frmBuying";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBuying_FormClosing);
             this.Load += new System.EventHandler(this.frmBuying_Load);
@@ -361,16 +387,13 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton btnPresent;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TreeView trvListSuppliers;
         private System.Windows.Forms.DataGridView dgvListProducts;
         private MetroFramework.Controls.MetroButton mbtnBuying;
         private MetroFramework.Controls.MetroButton mbtnPurchare;
         private MetroFramework.Controls.MetroButton mbtnFeedback;
         private MetroFramework.Controls.MetroButton mbtnExit;
         private MetroFramework.Controls.MetroButton mbtnLogout;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroTextBox mtbxSupplier;
         private MetroFramework.Controls.MetroTextBox mtbxNameProduct;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel5;
@@ -383,5 +406,9 @@
         private MetroFramework.Controls.MetroButton mbtnFind;
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroLabel metroLabel9;
+        private System.Windows.Forms.TreeView trvListProductType;
+        private System.Windows.Forms.Button btnMyCart;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroTextBox mtbxProductType;
     }
 }

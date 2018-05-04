@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3EC2D852-BEE5-47D3-A31A-7EE0A650A4CB}</ProjectGuid>
+    <ProjectGuid>{1EF6BEE4-C3BF-480C-8798-1E1BE3B5326E}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -64,11 +64,18 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassConvert.cs" />
+    <Compile Include="Objects Temp\Customer_Temp.cs" />
     <Compile Include="DataClasses.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Objects Temp\Employee_Temp.cs" />
+    <Compile Include="Objects Temp\Login_Temp.cs" />
+    <Compile Include="Objects Temp\Order_Detail_Temp.cs" />
+    <Compile Include="Objects Temp\Order_Temp.cs" />
+    <Compile Include="Objects Temp\Product_Temp.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
@@ -99,6 +106,12 @@
       <DependentUpon>DataClasses.dbml</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyProperties\MyProperties.csproj">
+      <Project>{e029d62d-2b5a-4634-b050-9e124fee96ff}</Project>
+      <Name>MyProperties</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -112,7 +125,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>19347</DevelopmentServerPort>
+          <DevelopmentServerPort>1888</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:21997/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

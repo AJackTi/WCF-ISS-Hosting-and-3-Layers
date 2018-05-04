@@ -15,6 +15,115 @@ namespace DAL.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Product_Temp", Namespace="http://schemas.datacontract.org/2004/07/WcfService")]
+    [System.SerializableAttribute()]
+    public partial class Product_Temp : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UnitInStockField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal UnitPriceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((this.ProductIDField.Equals(value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductName {
+            get {
+                return this.ProductNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductNameField, value) != true)) {
+                    this.ProductNameField = value;
+                    this.RaisePropertyChanged("ProductName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductType {
+            get {
+                return this.ProductTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductTypeField, value) != true)) {
+                    this.ProductTypeField = value;
+                    this.RaisePropertyChanged("ProductType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UnitInStock {
+            get {
+                return this.UnitInStockField;
+            }
+            set {
+                if ((this.UnitInStockField.Equals(value) != true)) {
+                    this.UnitInStockField = value;
+                    this.RaisePropertyChanged("UnitInStock");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal UnitPrice {
+            get {
+                return this.UnitPriceField;
+            }
+            set {
+                if ((this.UnitPriceField.Equals(value) != true)) {
+                    this.UnitPriceField = value;
+                    this.RaisePropertyChanged("UnitPrice");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/WcfService")]
     [System.SerializableAttribute()]
     public partial class Product : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -32,10 +141,7 @@ namespace DAL.ServiceReference {
         private string ProductNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DAL.ServiceReference.Supplier SupplierField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SupplierIDField;
+        private string ProductTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int UnitInStockField;
@@ -93,27 +199,14 @@ namespace DAL.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public DAL.ServiceReference.Supplier Supplier {
+        public string ProductType {
             get {
-                return this.SupplierField;
+                return this.ProductTypeField;
             }
             set {
-                if ((object.ReferenceEquals(this.SupplierField, value) != true)) {
-                    this.SupplierField = value;
-                    this.RaisePropertyChanged("Supplier");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SupplierID {
-            get {
-                return this.SupplierIDField;
-            }
-            set {
-                if ((this.SupplierIDField.Equals(value) != true)) {
-                    this.SupplierIDField = value;
-                    this.RaisePropertyChanged("SupplierID");
+                if ((object.ReferenceEquals(this.ProductTypeField, value) != true)) {
+                    this.ProductTypeField = value;
+                    this.RaisePropertyChanged("ProductType");
                 }
             }
         }
@@ -140,131 +233,6 @@ namespace DAL.ServiceReference {
                 if ((this.UnitPriceField.Equals(value) != true)) {
                     this.UnitPriceField = value;
                     this.RaisePropertyChanged("UnitPrice");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Supplier", Namespace="http://schemas.datacontract.org/2004/07/WcfService")]
-    [System.SerializableAttribute()]
-    public partial class Supplier : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CompanyNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DAL.ServiceReference.Login LoginField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PhoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DAL.ServiceReference.Product[] ProductsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SupplierIDField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Address {
-            get {
-                return this.AddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
-                    this.AddressField = value;
-                    this.RaisePropertyChanged("Address");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CompanyName {
-            get {
-                return this.CompanyNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CompanyNameField, value) != true)) {
-                    this.CompanyNameField = value;
-                    this.RaisePropertyChanged("CompanyName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public DAL.ServiceReference.Login Login {
-            get {
-                return this.LoginField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LoginField, value) != true)) {
-                    this.LoginField = value;
-                    this.RaisePropertyChanged("Login");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Phone {
-            get {
-                return this.PhoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
-                    this.PhoneField = value;
-                    this.RaisePropertyChanged("Phone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public DAL.ServiceReference.Product[] Products {
-            get {
-                return this.ProductsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductsField, value) != true)) {
-                    this.ProductsField = value;
-                    this.RaisePropertyChanged("Products");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SupplierID {
-            get {
-                return this.SupplierIDField;
-            }
-            set {
-                if ((this.SupplierIDField.Equals(value) != true)) {
-                    this.SupplierIDField = value;
-                    this.RaisePropertyChanged("SupplierID");
                 }
             }
         }
@@ -429,7 +397,7 @@ namespace DAL.ServiceReference {
         private System.DateTime OrderDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DAL.ServiceReference.OrderDetail OrderDetailField;
+        private DAL.ServiceReference.OrderDetail[] OrderDetailsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int OrderIDField;
@@ -510,14 +478,14 @@ namespace DAL.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public DAL.ServiceReference.OrderDetail OrderDetail {
+        public DAL.ServiceReference.OrderDetail[] OrderDetails {
             get {
-                return this.OrderDetailField;
+                return this.OrderDetailsField;
             }
             set {
-                if ((object.ReferenceEquals(this.OrderDetailField, value) != true)) {
-                    this.OrderDetailField = value;
-                    this.RaisePropertyChanged("OrderDetail");
+                if ((object.ReferenceEquals(this.OrderDetailsField, value) != true)) {
+                    this.OrderDetailsField = value;
+                    this.RaisePropertyChanged("OrderDetails");
                 }
             }
         }
@@ -558,7 +526,7 @@ namespace DAL.ServiceReference {
         private string AddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ContactNameField;
+        private string ContactNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int CustomerIDField;
@@ -571,6 +539,9 @@ namespace DAL.ServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PhoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -596,12 +567,12 @@ namespace DAL.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ContactName {
+        public string ContactName {
             get {
                 return this.ContactNameField;
             }
             set {
-                if ((this.ContactNameField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.ContactNameField, value) != true)) {
                     this.ContactNameField = value;
                     this.RaisePropertyChanged("ContactName");
                 }
@@ -660,6 +631,19 @@ namespace DAL.ServiceReference {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserID {
+            get {
+                return this.UserIDField;
+            }
+            set {
+                if ((this.UserIDField.Equals(value) != true)) {
+                    this.UserIDField = value;
+                    this.RaisePropertyChanged("UserID");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -690,6 +674,9 @@ namespace DAL.ServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private DAL.ServiceReference.Order[] OrdersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -753,102 +740,6 @@ namespace DAL.ServiceReference {
             }
         }
         
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Login", Namespace="http://schemas.datacontract.org/2004/07/WcfService")]
-    [System.SerializableAttribute()]
-    public partial class Login : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DAL.ServiceReference.Customer CustomerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DAL.ServiceReference.Employee EmployeeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PasswordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DAL.ServiceReference.Supplier SupplierField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int UserIDField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public DAL.ServiceReference.Customer Customer {
-            get {
-                return this.CustomerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
-                    this.CustomerField = value;
-                    this.RaisePropertyChanged("Customer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public DAL.ServiceReference.Employee Employee {
-            get {
-                return this.EmployeeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmployeeField, value) != true)) {
-                    this.EmployeeField = value;
-                    this.RaisePropertyChanged("Employee");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Password {
-            get {
-                return this.PasswordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
-                    this.PasswordField = value;
-                    this.RaisePropertyChanged("Password");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public DAL.ServiceReference.Supplier Supplier {
-            get {
-                return this.SupplierField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SupplierField, value) != true)) {
-                    this.SupplierField = value;
-                    this.RaisePropertyChanged("Supplier");
-                }
-            }
-        }
-        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int UserID {
             get {
@@ -872,15 +763,202 @@ namespace DAL.ServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Login", Namespace="http://schemas.datacontract.org/2004/07/WcfService")]
+    [System.SerializableAttribute()]
+    public partial class Login : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private DAL.ServiceReference.Customer[] CustomersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private DAL.ServiceReference.Employee[] EmployeesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public DAL.ServiceReference.Customer[] Customers {
+            get {
+                return this.CustomersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomersField, value) != true)) {
+                    this.CustomersField = value;
+                    this.RaisePropertyChanged("Customers");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public DAL.ServiceReference.Employee[] Employees {
+            get {
+                return this.EmployeesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmployeesField, value) != true)) {
+                    this.EmployeesField = value;
+                    this.RaisePropertyChanged("Employees");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password {
+            get {
+                return this.PasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserID {
+            get {
+                return this.UserIDField;
+            }
+            set {
+                if ((this.UserIDField.Equals(value) != true)) {
+                    this.UserIDField = value;
+                    this.RaisePropertyChanged("UserID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserName {
+            get {
+                return this.UserNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserNameField, value) != true)) {
+                    this.UserNameField = value;
+                    this.RaisePropertyChanged("UserName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllProduct", ReplyAction="http://tempuri.org/IService1/GetAllProductResponse")]
-        DAL.ServiceReference.Product[] GetAllProduct();
+        DAL.ServiceReference.Product_Temp[] GetAllProduct();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllProduct", ReplyAction="http://tempuri.org/IService1/GetAllProductResponse")]
-        System.Threading.Tasks.Task<DAL.ServiceReference.Product[]> GetAllProductAsync();
+        System.Threading.Tasks.Task<DAL.ServiceReference.Product_Temp[]> GetAllProductAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetProductFromID", ReplyAction="http://tempuri.org/IService1/GetProductFromIDResponse")]
+        DAL.ServiceReference.Product_Temp[] GetProductFromID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetProductFromID", ReplyAction="http://tempuri.org/IService1/GetProductFromIDResponse")]
+        System.Threading.Tasks.Task<DAL.ServiceReference.Product_Temp[]> GetProductFromIDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetProductFromType", ReplyAction="http://tempuri.org/IService1/GetProductFromTypeResponse")]
+        DAL.ServiceReference.Product_Temp[] GetProductFromType(string producttype);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetProductFromType", ReplyAction="http://tempuri.org/IService1/GetProductFromTypeResponse")]
+        System.Threading.Tasks.Task<DAL.ServiceReference.Product_Temp[]> GetProductFromTypeAsync(string producttype);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddProduct", ReplyAction="http://tempuri.org/IService1/AddProductResponse")]
+        void AddProduct(DAL.ServiceReference.Product product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddProduct", ReplyAction="http://tempuri.org/IService1/AddProductResponse")]
+        System.Threading.Tasks.Task AddProductAsync(DAL.ServiceReference.Product product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteProduct", ReplyAction="http://tempuri.org/IService1/DeleteProductResponse")]
+        void DeleteProduct(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteProduct", ReplyAction="http://tempuri.org/IService1/DeleteProductResponse")]
+        System.Threading.Tasks.Task DeleteProductAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProduct", ReplyAction="http://tempuri.org/IService1/UpdateProductResponse")]
+        void UpdateProduct(DAL.ServiceReference.Product product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProduct", ReplyAction="http://tempuri.org/IService1/UpdateProductResponse")]
+        System.Threading.Tasks.Task UpdateProductAsync(DAL.ServiceReference.Product product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllOrder", ReplyAction="http://tempuri.org/IService1/GetAllOrderResponse")]
+        DAL.ServiceReference.Order[] GetAllOrder();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllOrder", ReplyAction="http://tempuri.org/IService1/GetAllOrderResponse")]
+        System.Threading.Tasks.Task<DAL.ServiceReference.Order[]> GetAllOrderAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddOrder", ReplyAction="http://tempuri.org/IService1/AddOrderResponse")]
+        void AddOrder(DAL.ServiceReference.Order order);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddOrder", ReplyAction="http://tempuri.org/IService1/AddOrderResponse")]
+        System.Threading.Tasks.Task AddOrderAsync(DAL.ServiceReference.Order order);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteOrder", ReplyAction="http://tempuri.org/IService1/DeleteOrderResponse")]
+        void DeleteOrder(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteOrder", ReplyAction="http://tempuri.org/IService1/DeleteOrderResponse")]
+        System.Threading.Tasks.Task DeleteOrderAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateOrder", ReplyAction="http://tempuri.org/IService1/UpdateOrderResponse")]
+        void UpdateOrder(DAL.ServiceReference.Order order);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateOrder", ReplyAction="http://tempuri.org/IService1/UpdateOrderResponse")]
+        System.Threading.Tasks.Task UpdateOrderAsync(DAL.ServiceReference.Order order);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllOrderDetail", ReplyAction="http://tempuri.org/IService1/GetAllOrderDetailResponse")]
+        DAL.ServiceReference.OrderDetail[] GetAllOrderDetail();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllOrderDetail", ReplyAction="http://tempuri.org/IService1/GetAllOrderDetailResponse")]
+        System.Threading.Tasks.Task<DAL.ServiceReference.OrderDetail[]> GetAllOrderDetailAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddOrderDetail", ReplyAction="http://tempuri.org/IService1/AddOrderDetailResponse")]
+        void AddOrderDetail(DAL.ServiceReference.OrderDetail orderdetail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddOrderDetail", ReplyAction="http://tempuri.org/IService1/AddOrderDetailResponse")]
+        System.Threading.Tasks.Task AddOrderDetailAsync(DAL.ServiceReference.OrderDetail orderdetail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteOrderDetail", ReplyAction="http://tempuri.org/IService1/DeleteOrderDetailResponse")]
+        void DeleteOrderDetail(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteOrderDetail", ReplyAction="http://tempuri.org/IService1/DeleteOrderDetailResponse")]
+        System.Threading.Tasks.Task DeleteOrderDetailAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateOrderDetail", ReplyAction="http://tempuri.org/IService1/UpdateOrderDetailResponse")]
+        void UpdateOrderDetail(DAL.ServiceReference.OrderDetail orderdetail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateOrderDetail", ReplyAction="http://tempuri.org/IService1/UpdateOrderDetailResponse")]
+        System.Threading.Tasks.Task UpdateOrderDetailAsync(DAL.ServiceReference.OrderDetail orderdetail);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -910,12 +988,116 @@ namespace DAL.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public DAL.ServiceReference.Product[] GetAllProduct() {
+        public DAL.ServiceReference.Product_Temp[] GetAllProduct() {
             return base.Channel.GetAllProduct();
         }
         
-        public System.Threading.Tasks.Task<DAL.ServiceReference.Product[]> GetAllProductAsync() {
+        public System.Threading.Tasks.Task<DAL.ServiceReference.Product_Temp[]> GetAllProductAsync() {
             return base.Channel.GetAllProductAsync();
+        }
+        
+        public DAL.ServiceReference.Product_Temp[] GetProductFromID(int id) {
+            return base.Channel.GetProductFromID(id);
+        }
+        
+        public System.Threading.Tasks.Task<DAL.ServiceReference.Product_Temp[]> GetProductFromIDAsync(int id) {
+            return base.Channel.GetProductFromIDAsync(id);
+        }
+        
+        public DAL.ServiceReference.Product_Temp[] GetProductFromType(string producttype) {
+            return base.Channel.GetProductFromType(producttype);
+        }
+        
+        public System.Threading.Tasks.Task<DAL.ServiceReference.Product_Temp[]> GetProductFromTypeAsync(string producttype) {
+            return base.Channel.GetProductFromTypeAsync(producttype);
+        }
+        
+        public void AddProduct(DAL.ServiceReference.Product product) {
+            base.Channel.AddProduct(product);
+        }
+        
+        public System.Threading.Tasks.Task AddProductAsync(DAL.ServiceReference.Product product) {
+            return base.Channel.AddProductAsync(product);
+        }
+        
+        public void DeleteProduct(int id) {
+            base.Channel.DeleteProduct(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteProductAsync(int id) {
+            return base.Channel.DeleteProductAsync(id);
+        }
+        
+        public void UpdateProduct(DAL.ServiceReference.Product product) {
+            base.Channel.UpdateProduct(product);
+        }
+        
+        public System.Threading.Tasks.Task UpdateProductAsync(DAL.ServiceReference.Product product) {
+            return base.Channel.UpdateProductAsync(product);
+        }
+        
+        public DAL.ServiceReference.Order[] GetAllOrder() {
+            return base.Channel.GetAllOrder();
+        }
+        
+        public System.Threading.Tasks.Task<DAL.ServiceReference.Order[]> GetAllOrderAsync() {
+            return base.Channel.GetAllOrderAsync();
+        }
+        
+        public void AddOrder(DAL.ServiceReference.Order order) {
+            base.Channel.AddOrder(order);
+        }
+        
+        public System.Threading.Tasks.Task AddOrderAsync(DAL.ServiceReference.Order order) {
+            return base.Channel.AddOrderAsync(order);
+        }
+        
+        public void DeleteOrder(int id) {
+            base.Channel.DeleteOrder(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteOrderAsync(int id) {
+            return base.Channel.DeleteOrderAsync(id);
+        }
+        
+        public void UpdateOrder(DAL.ServiceReference.Order order) {
+            base.Channel.UpdateOrder(order);
+        }
+        
+        public System.Threading.Tasks.Task UpdateOrderAsync(DAL.ServiceReference.Order order) {
+            return base.Channel.UpdateOrderAsync(order);
+        }
+        
+        public DAL.ServiceReference.OrderDetail[] GetAllOrderDetail() {
+            return base.Channel.GetAllOrderDetail();
+        }
+        
+        public System.Threading.Tasks.Task<DAL.ServiceReference.OrderDetail[]> GetAllOrderDetailAsync() {
+            return base.Channel.GetAllOrderDetailAsync();
+        }
+        
+        public void AddOrderDetail(DAL.ServiceReference.OrderDetail orderdetail) {
+            base.Channel.AddOrderDetail(orderdetail);
+        }
+        
+        public System.Threading.Tasks.Task AddOrderDetailAsync(DAL.ServiceReference.OrderDetail orderdetail) {
+            return base.Channel.AddOrderDetailAsync(orderdetail);
+        }
+        
+        public void DeleteOrderDetail(int id) {
+            base.Channel.DeleteOrderDetail(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteOrderDetailAsync(int id) {
+            return base.Channel.DeleteOrderDetailAsync(id);
+        }
+        
+        public void UpdateOrderDetail(DAL.ServiceReference.OrderDetail orderdetail) {
+            base.Channel.UpdateOrderDetail(orderdetail);
+        }
+        
+        public System.Threading.Tasks.Task UpdateOrderDetailAsync(DAL.ServiceReference.OrderDetail orderdetail) {
+            return base.Channel.UpdateOrderDetailAsync(orderdetail);
         }
     }
 }

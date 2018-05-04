@@ -1,97 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="ArrayOfProduct">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
-  <xs:complexType name="Product">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="OrderDetails" nillable="true" type="tns:ArrayOfOrderDetail" />
-      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
-      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Supplier" nillable="true" type="tns:Supplier" />
-      <xs:element minOccurs="0" name="SupplierID" type="xs:int" />
-      <xs:element minOccurs="0" name="UnitInStock" type="xs:int" />
-      <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Product" nillable="true" type="tns:Product" />
-  <xs:complexType name="ArrayOfOrderDetail">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderDetail" nillable="true" type="tns:OrderDetail" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfOrderDetail" nillable="true" type="tns:ArrayOfOrderDetail" />
-  <xs:complexType name="OrderDetail">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Order" nillable="true" type="tns:Order" />
-      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
-      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
-      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
-      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
-      <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="OrderDetail" nillable="true" type="tns:OrderDetail" />
-  <xs:complexType name="Order">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:Customer" />
-      <xs:element minOccurs="0" name="CustomerID" type="xs:int" />
-      <xs:element minOccurs="0" name="Employee" nillable="true" type="tns:Employee" />
-      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
-      <xs:element minOccurs="0" name="OrderDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="OrderDetail" nillable="true" type="tns:OrderDetail" />
-      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Order" nillable="true" type="tns:Order" />
-  <xs:complexType name="Customer">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ContactName" type="xs:int" />
-      <xs:element minOccurs="0" name="CustomerID" type="xs:int" />
-      <xs:element minOccurs="0" name="Login" nillable="true" type="tns:Login" />
-      <xs:element minOccurs="0" name="Orders" nillable="true" type="tns:ArrayOfOrder" />
-      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Customer" nillable="true" type="tns:Customer" />
-  <xs:complexType name="Login">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:Customer" />
-      <xs:element minOccurs="0" name="Employee" nillable="true" type="tns:Employee" />
-      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Supplier" nillable="true" type="tns:Supplier" />
-      <xs:element minOccurs="0" name="UserID" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Login" nillable="true" type="tns:Login" />
-  <xs:complexType name="Employee">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
-      <xs:element minOccurs="0" name="EmployeeName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Login" nillable="true" type="tns:Login" />
-      <xs:element minOccurs="0" name="Orders" nillable="true" type="tns:ArrayOfOrder" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Employee" nillable="true" type="tns:Employee" />
-  <xs:complexType name="ArrayOfOrder">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Order" nillable="true" type="tns:Order" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfOrder" nillable="true" type="tns:ArrayOfOrder" />
-  <xs:complexType name="Supplier">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Login" nillable="true" type="tns:Login" />
-      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Products" nillable="true" type="tns:ArrayOfProduct" />
-      <xs:element minOccurs="0" name="SupplierID" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Supplier" nillable="true" type="tns:Supplier" />
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/WcfService/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService" />
+  <xs:element name="GetAllProduct">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="GetAllProductResult" nillable="true" type="q1:ArrayOfProduct_Temp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductFromID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductFromIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="GetProductFromIDResult" nillable="true" type="q2:ArrayOfProduct_Temp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductFromType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="producttype" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductFromTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="GetProductFromTypeResult" nillable="true" type="q3:ArrayOfProduct_Temp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="product" nillable="true" type="q4:Product" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddProductResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProductResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="product" nillable="true" type="q5:Product" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProductResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllOrder">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="GetAllOrderResult" nillable="true" type="q6:ArrayOfOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="order" nillable="true" type="q7:Order" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOrderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteOrderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="order" nillable="true" type="q8:Order" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllOrderDetail">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllOrderDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="GetAllOrderDetailResult" nillable="true" type="q9:ArrayOfOrderDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOrderDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="orderdetail" nillable="true" type="q10:OrderDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOrderDetailResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteOrderDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteOrderDetailResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrderDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="orderdetail" nillable="true" type="q11:OrderDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrderDetailResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

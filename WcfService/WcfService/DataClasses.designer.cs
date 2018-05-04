@@ -212,7 +212,7 @@ namespace WcfService
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(100)")]
 		public string Address
 		{
 			get
@@ -232,7 +232,7 @@ namespace WcfService
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="NChar(12) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="NChar(12)")]
 		public string Phone
 		{
 			get
@@ -370,6 +370,8 @@ namespace WcfService
 		
 		private int _UnitInStock;
 		
+		private string _ProductType;
+		
 		private EntitySet<OrderDetail> _OrderDetails;
 		
     #region Extensibility Method Definitions
@@ -384,6 +386,8 @@ namespace WcfService
     partial void OnUnitPriceChanged();
     partial void OnUnitInStockChanging(int value);
     partial void OnUnitInStockChanged();
+    partial void OnProductTypeChanging(string value);
+    partial void OnProductTypeChanged();
     #endregion
 		
 		public Product()
@@ -468,6 +472,26 @@ namespace WcfService
 					this._UnitInStock = value;
 					this.SendPropertyChanged("UnitInStock");
 					this.OnUnitInStockChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductType", DbType="NVarChar(50)")]
+		public string ProductType
+		{
+			get
+			{
+				return this._ProductType;
+			}
+			set
+			{
+				if ((this._ProductType != value))
+				{
+					this.OnProductTypeChanging(value);
+					this.SendPropertyChanging();
+					this._ProductType = value;
+					this.SendPropertyChanged("ProductType");
+					this.OnProductTypeChanged();
 				}
 			}
 		}
@@ -707,6 +731,8 @@ namespace WcfService
 		
 		private string _Password;
 		
+		private string _UserName;
+		
 		private EntitySet<Customer> _Customers;
 		
 		private EntitySet<Employee> _Employees;
@@ -719,6 +745,8 @@ namespace WcfService
     partial void OnUserIDChanged();
     partial void OnPasswordChanging(string value);
     partial void OnPasswordChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
     #endregion
 		
 		public Login()
@@ -764,6 +792,26 @@ namespace WcfService
 					this._Password = value;
 					this.SendPropertyChanged("Password");
 					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
 				}
 			}
 		}
@@ -1097,7 +1145,7 @@ namespace WcfService
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int OrderID
 		{
 			get

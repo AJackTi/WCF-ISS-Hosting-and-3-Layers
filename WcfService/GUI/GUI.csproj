@@ -32,14 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="MetroFramework">
       <HintPath>C:\Users\AJackTi\Desktop\PROGRAMING\PROGRAMING\C#\Framework\metroframework\MetroFramework.dll</HintPath>
     </Reference>
@@ -124,6 +116,8 @@
   <ItemGroup>
     <Content Include="Resources\human-icon-png-1901.png" />
     <Content Include="Resources\login.png" />
+    <Content Include="Resources\shopping-cart.png" />
+    <None Include="Resources\shopping-cart1.png" />
     <None Include="Resources\logout.png" />
   </ItemGroup>
   <ItemGroup>
@@ -134,6 +128,10 @@
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{5f8a2a30-ef85-4c61-a43c-893e98ade47b}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyProperties\MyProperties.csproj">
+      <Project>{e029d62d-2b5a-4634-b050-9e124fee96ff}</Project>
+      <Name>MyProperties</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

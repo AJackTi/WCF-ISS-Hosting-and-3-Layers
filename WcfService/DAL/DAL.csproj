@@ -56,12 +56,19 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Properties\DataSources\MyProperties.ProductObj.datasource" />
+    <None Include="Properties\DataSources\MyProperties.ProductsObj.datasource" />
     <None Include="Properties\DataSources\WcfService.CompositeType.datasource" />
     <None Include="Properties\DataSources\WcfService.Order.datasource" />
     <None Include="Properties\DataSources\WcfService.OrderDetail.datasource" />
     <None Include="Properties\DataSources\WcfService.Product.datasource" />
     <None Include="Properties\DataSources\WcfService.Supplier.datasource" />
-    <None Include="Service References\ServiceReference\DAL.ServiceReference.Product.datasource">
+    <None Include="Service References\ServiceReference\DAL.ServiceReference.Order.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\DAL.ServiceReference.OrderDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\DAL.ServiceReference.Product_Temp.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference\Service1.wsdl" />
@@ -71,9 +78,15 @@
     <None Include="Service References\ServiceReference\Service11.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference\Service12.xsd">
+    <None Include="Service References\ServiceReference\Service13.xsd">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyProperties\MyProperties.csproj">
+      <Project>{e029d62d-2b5a-4634-b050-9e124fee96ff}</Project>
+      <Name>MyProperties</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReference\" />
@@ -92,12 +105,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WcfService\WcfService.csproj">
-      <Project>{3ec2d852-bee5-47d3-a31a-7ee0a650a4cb}</Project>
-      <Name>WcfService</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

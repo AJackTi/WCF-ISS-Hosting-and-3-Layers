@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using MyProperties;
 
 namespace WcfService
 {
@@ -12,11 +13,45 @@ namespace WcfService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        DataClassesDataContext data = new DataClassesDataContext();
-
-        public List<Product> GetAllProduct()
+        DataClassesDataContext data;
+        //ProductsObj productsObj;
+        public Service1()
         {
-            return data.Products.ToList();
+            data = new DataClassesDataContext();
+            //productsObj = new ProductsObj();
+        }
+
+        public List<Product_Temp> GetProductFromID(int id)
+        {
+            List<Product_Temp> lstProductTemp = new List<Product_Temp>();
+            foreach (var i in data.Products.ToList())
+            {
+                if (i.ProductID == id)
+                    lstProductTemp.Add(ClassConvert.ConvertToProduct_Temp(i as Product));
+            }
+            return lstProductTemp;
+        }
+
+        public List<Product_Temp> GetProductFromType(string producttype)
+        {
+            List<Product_Temp> lstProductTemp = new List<Product_Temp>();
+            foreach (var i in data.Products.ToList())
+            {
+                if (i.ProductType == producttype)
+                    lstProductTemp.Add(ClassConvert.ConvertToProduct_Temp(i as Product));
+            }
+            return lstProductTemp;
+        }
+
+        public List<Product_Temp> GetAllProduct()
+        {
+            List<Product_Temp> lstProductTemp = new List<Product_Temp>();
+            foreach (var i in data.Products.ToList())
+            {
+                Product_Temp product_temp = ClassConvert.ConvertToProduct_Temp(i as Product);
+                lstProductTemp.Add(product_temp);
+            }
+            return lstProductTemp;
         }
 
         public void AddProduct(Product product)
