@@ -73,5 +73,10 @@ namespace DAL
         {
             obj.AddProduct(productObj);
         }
+
+        public void UpdateProduct(ProductsObj productObj)
+        {
+            obj.UpdateProduct(productObj);
+        }
     }
 }

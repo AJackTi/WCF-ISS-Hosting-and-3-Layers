@@ -69,7 +69,7 @@
   <xs:element name="UpdateProduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="product" nillable="true" type="q5:Product" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/MyProperties" minOccurs="0" name="productObj" nillable="true" type="q5:ProductsObj" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -39,5 +39,10 @@ namespace BLL
         {
             crudProducts.AddProduct(productObj);
         }
+
+        public void UpdateProduct(ProductsObj productObj)
+        {
+            crudProducts.UpdateProduct(productObj);
+        }
     }
 }

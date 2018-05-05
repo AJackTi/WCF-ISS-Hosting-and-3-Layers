@@ -124,256 +124,6 @@ namespace DAL.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/WcfService")]
-    [System.SerializableAttribute()]
-    public partial class Product : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DAL.ServiceReference.OrderDetail[] OrderDetailsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ProductIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProductNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProductTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int UnitInStockField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal UnitPriceField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public DAL.ServiceReference.OrderDetail[] OrderDetails {
-            get {
-                return this.OrderDetailsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OrderDetailsField, value) != true)) {
-                    this.OrderDetailsField = value;
-                    this.RaisePropertyChanged("OrderDetails");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ProductID {
-            get {
-                return this.ProductIDField;
-            }
-            set {
-                if ((this.ProductIDField.Equals(value) != true)) {
-                    this.ProductIDField = value;
-                    this.RaisePropertyChanged("ProductID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ProductName {
-            get {
-                return this.ProductNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductNameField, value) != true)) {
-                    this.ProductNameField = value;
-                    this.RaisePropertyChanged("ProductName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ProductType {
-            get {
-                return this.ProductTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductTypeField, value) != true)) {
-                    this.ProductTypeField = value;
-                    this.RaisePropertyChanged("ProductType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int UnitInStock {
-            get {
-                return this.UnitInStockField;
-            }
-            set {
-                if ((this.UnitInStockField.Equals(value) != true)) {
-                    this.UnitInStockField = value;
-                    this.RaisePropertyChanged("UnitInStock");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal UnitPrice {
-            get {
-                return this.UnitPriceField;
-            }
-            set {
-                if ((this.UnitPriceField.Equals(value) != true)) {
-                    this.UnitPriceField = value;
-                    this.RaisePropertyChanged("UnitPrice");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OrderDetail", Namespace="http://schemas.datacontract.org/2004/07/WcfService")]
-    [System.SerializableAttribute()]
-    public partial class OrderDetail : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DAL.ServiceReference.Order OrderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OrderIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DAL.ServiceReference.Product ProductField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ProductIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int QuantityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal UnitPriceField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public DAL.ServiceReference.Order Order {
-            get {
-                return this.OrderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OrderField, value) != true)) {
-                    this.OrderField = value;
-                    this.RaisePropertyChanged("Order");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OrderID {
-            get {
-                return this.OrderIDField;
-            }
-            set {
-                if ((this.OrderIDField.Equals(value) != true)) {
-                    this.OrderIDField = value;
-                    this.RaisePropertyChanged("OrderID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public DAL.ServiceReference.Product Product {
-            get {
-                return this.ProductField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductField, value) != true)) {
-                    this.ProductField = value;
-                    this.RaisePropertyChanged("Product");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ProductID {
-            get {
-                return this.ProductIDField;
-            }
-            set {
-                if ((this.ProductIDField.Equals(value) != true)) {
-                    this.ProductIDField = value;
-                    this.RaisePropertyChanged("ProductID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Quantity {
-            get {
-                return this.QuantityField;
-            }
-            set {
-                if ((this.QuantityField.Equals(value) != true)) {
-                    this.QuantityField = value;
-                    this.RaisePropertyChanged("Quantity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal UnitPrice {
-            get {
-                return this.UnitPriceField;
-            }
-            set {
-                if ((this.UnitPriceField.Equals(value) != true)) {
-                    this.UnitPriceField = value;
-                    this.RaisePropertyChanged("UnitPrice");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Order", Namespace="http://schemas.datacontract.org/2004/07/WcfService")]
     [System.SerializableAttribute()]
     public partial class Order : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -765,6 +515,131 @@ namespace DAL.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OrderDetail", Namespace="http://schemas.datacontract.org/2004/07/WcfService")]
+    [System.SerializableAttribute()]
+    public partial class OrderDetail : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private DAL.ServiceReference.Order OrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private DAL.ServiceReference.Product ProductField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal UnitPriceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public DAL.ServiceReference.Order Order {
+            get {
+                return this.OrderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderField, value) != true)) {
+                    this.OrderField = value;
+                    this.RaisePropertyChanged("Order");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderID {
+            get {
+                return this.OrderIDField;
+            }
+            set {
+                if ((this.OrderIDField.Equals(value) != true)) {
+                    this.OrderIDField = value;
+                    this.RaisePropertyChanged("OrderID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public DAL.ServiceReference.Product Product {
+            get {
+                return this.ProductField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductField, value) != true)) {
+                    this.ProductField = value;
+                    this.RaisePropertyChanged("Product");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((this.ProductIDField.Equals(value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal UnitPrice {
+            get {
+                return this.UnitPriceField;
+            }
+            set {
+                if ((this.UnitPriceField.Equals(value) != true)) {
+                    this.UnitPriceField = value;
+                    this.RaisePropertyChanged("UnitPrice");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Login", Namespace="http://schemas.datacontract.org/2004/07/WcfService")]
     [System.SerializableAttribute()]
     public partial class Login : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -872,6 +747,131 @@ namespace DAL.ServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/WcfService")]
+    [System.SerializableAttribute()]
+    public partial class Product : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private DAL.ServiceReference.OrderDetail[] OrderDetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UnitInStockField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal UnitPriceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public DAL.ServiceReference.OrderDetail[] OrderDetails {
+            get {
+                return this.OrderDetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderDetailsField, value) != true)) {
+                    this.OrderDetailsField = value;
+                    this.RaisePropertyChanged("OrderDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((this.ProductIDField.Equals(value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductName {
+            get {
+                return this.ProductNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductNameField, value) != true)) {
+                    this.ProductNameField = value;
+                    this.RaisePropertyChanged("ProductName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductType {
+            get {
+                return this.ProductTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductTypeField, value) != true)) {
+                    this.ProductTypeField = value;
+                    this.RaisePropertyChanged("ProductType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UnitInStock {
+            get {
+                return this.UnitInStockField;
+            }
+            set {
+                if ((this.UnitInStockField.Equals(value) != true)) {
+                    this.UnitInStockField = value;
+                    this.RaisePropertyChanged("UnitInStock");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal UnitPrice {
+            get {
+                return this.UnitPriceField;
+            }
+            set {
+                if ((this.UnitPriceField.Equals(value) != true)) {
+                    this.UnitPriceField = value;
+                    this.RaisePropertyChanged("UnitPrice");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService1")]
     public interface IService1 {
@@ -907,10 +907,10 @@ namespace DAL.ServiceReference {
         System.Threading.Tasks.Task DeleteProductAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProduct", ReplyAction="http://tempuri.org/IService1/UpdateProductResponse")]
-        void UpdateProduct(DAL.ServiceReference.Product product);
+        void UpdateProduct(MyProperties.ProductsObj productObj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProduct", ReplyAction="http://tempuri.org/IService1/UpdateProductResponse")]
-        System.Threading.Tasks.Task UpdateProductAsync(DAL.ServiceReference.Product product);
+        System.Threading.Tasks.Task UpdateProductAsync(MyProperties.ProductsObj productObj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllOrder", ReplyAction="http://tempuri.org/IService1/GetAllOrderResponse")]
         DAL.ServiceReference.Order[] GetAllOrder();
@@ -1034,12 +1034,12 @@ namespace DAL.ServiceReference {
             return base.Channel.DeleteProductAsync(id);
         }
         
-        public void UpdateProduct(DAL.ServiceReference.Product product) {
-            base.Channel.UpdateProduct(product);
+        public void UpdateProduct(MyProperties.ProductsObj productObj) {
+            base.Channel.UpdateProduct(productObj);
         }
         
-        public System.Threading.Tasks.Task UpdateProductAsync(DAL.ServiceReference.Product product) {
-            return base.Channel.UpdateProductAsync(product);
+        public System.Threading.Tasks.Task UpdateProductAsync(MyProperties.ProductsObj productObj) {
+            return base.Channel.UpdateProductAsync(productObj);
         }
         
         public DAL.ServiceReference.Order[] GetAllOrder() {

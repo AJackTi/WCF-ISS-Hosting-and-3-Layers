@@ -16,34 +16,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Product_Temp" nillable="true" type="tns:Product_Temp" />
-  <xs:complexType name="Product">
+  <xs:complexType name="ArrayOfOrder">
     <xs:sequence>
-      <xs:element minOccurs="0" name="OrderDetails" nillable="true" type="tns:ArrayOfOrderDetail" />
-      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
-      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="UnitInStock" type="xs:int" />
-      <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Order" nillable="true" type="tns:Order" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="Product" nillable="true" type="tns:Product" />
-  <xs:complexType name="ArrayOfOrderDetail">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderDetail" nillable="true" type="tns:OrderDetail" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfOrderDetail" nillable="true" type="tns:ArrayOfOrderDetail" />
-  <xs:complexType name="OrderDetail">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Order" nillable="true" type="tns:Order" />
-      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
-      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
-      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
-      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
-      <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="OrderDetail" nillable="true" type="tns:OrderDetail" />
+  <xs:element name="ArrayOfOrder" nillable="true" type="tns:ArrayOfOrder" />
   <xs:complexType name="Order">
     <xs:sequence>
       <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:Customer" />
@@ -100,10 +78,32 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Employee" nillable="true" type="tns:Employee" />
-  <xs:complexType name="ArrayOfOrder">
+  <xs:complexType name="ArrayOfOrderDetail">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Order" nillable="true" type="tns:Order" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderDetail" nillable="true" type="tns:OrderDetail" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfOrder" nillable="true" type="tns:ArrayOfOrder" />
+  <xs:element name="ArrayOfOrderDetail" nillable="true" type="tns:ArrayOfOrderDetail" />
+  <xs:complexType name="OrderDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Order" nillable="true" type="tns:Order" />
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderDetail" nillable="true" type="tns:OrderDetail" />
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OrderDetails" nillable="true" type="tns:ArrayOfOrderDetail" />
+      <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitInStock" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
 </xs:schema>

@@ -180,8 +180,22 @@ namespace GUI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            // Lay cell dau tien cua dong duoc chon => lay id product de xoa
-            MessageBox.Show(this.dgvListProducts.SelectedRows[0].Cells[0].Value.ToString());
+            if (this.dgvListProducts.SelectedRows.Count > 0)
+            {
+                bllBusineesRuleProduct.DeleteProduct(int.Parse(this.dgvListProducts.SelectedRows[0].Cells[0].Value.ToString()));
+                DisplayToDataGrid(bllBusineesRuleProduct.GetAllProduct());
+            }
+            else if (this.dgvListProducts.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = this.dgvListProducts.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = this.dgvListProducts.Rows[selectedrowindex];
+                bllBusineesRuleProduct.DeleteProduct(int.Parse(selectedRow.Cells[0].Value.ToString()));
+                DisplayToDataGrid(bllBusineesRuleProduct.GetAllProduct());
+            }
+            else
+            {
+                MessageBox.Show("Please Choose One Product To Delete! Try Again!!!");
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -195,9 +209,40 @@ namespace GUI
             bllBusineesRuleProduct.AddProduct(productObj);
         }
 
+        void UpdateProduct()
+        {
+            if (this.dgvListProducts.SelectedRows.Count > 0)
+            {
+                ProductsObj productObj = new ProductsObj();
+                productObj.ProductIDObj = int.Parse( this.dgvListProducts.SelectedRows[0].Cells[0].Value.ToString());
+                productObj.ProductNameObj = this.mtbxNameProduct.Text;
+                productObj.UnitPriceObj = decimal.Parse( this.mtbxPrice.Text);
+                productObj.UnitInStockObj = int.Parse( this.mtbxStock.Text);
+                productObj.ProductTypeObj = this.mtbxProductType.Text;
+                bllBusineesRuleProduct.UpdateProduct(productObj);
+            }
+            else if(this.dgvListProducts.SelectedCells.Count>0)
+            {
+                int selectedrowindex = this.dgvListProducts.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = this.dgvListProducts.Rows[selectedrowindex];
+
+                ProductsObj productObj = new ProductsObj();
+                productObj.ProductIDObj = int.Parse(selectedRow.Cells[0].Value.ToString());
+                productObj.ProductNameObj = this.mtbxNameProduct.Text;
+                productObj.UnitPriceObj = decimal.Parse( this.mtbxPrice.Text);
+                productObj.UnitInStockObj = int.Parse( this.mtbxStock.Text);
+                productObj.ProductTypeObj = this.mtbxProductType.Text;
+                bllBusineesRuleProduct.UpdateProduct(productObj);
+            }
+            else
+            {
+                MessageBox.Show("Please Choose One Product To Change! Try Again!!!");
+            }
+        }
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            UpdateProduct();
         }
     }
 }
