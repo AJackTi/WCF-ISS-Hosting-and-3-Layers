@@ -144,5 +144,12 @@ namespace GUI
 	        }
             DisplayToDataGrid(bllBusineesRuleProduct.GetProductFromID(int.Parse( this.mtbxFindProduct.Text)));
         }
+
+        private void mbtnLogout_Click(object sender, EventArgs e)
+        {            
+            this.Close();
+            frmLogin frmlogin = new frmLogin();
+            frmlogin.Show();
+        }
     }
 }

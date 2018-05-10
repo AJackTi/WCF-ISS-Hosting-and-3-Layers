@@ -162,6 +162,7 @@
             this.mbtnLogout.TabIndex = 10;
             this.mbtnLogout.Text = "Log out";
             this.mbtnLogout.UseSelectable = true;
+            this.mbtnLogout.Click += new System.EventHandler(this.mbtnLogout_Click);
             // 
             // metroLabel3
             // 
@@ -175,6 +176,18 @@
             // 
             // mtbxNameProduct
             // 
+            // 
+            // 
+            // 
+            this.mtbxNameProduct.CustomButton.Image = null;
+            this.mtbxNameProduct.CustomButton.Location = new System.Drawing.Point(125, 1);
+            this.mtbxNameProduct.CustomButton.Name = "";
+            this.mtbxNameProduct.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mtbxNameProduct.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mtbxNameProduct.CustomButton.TabIndex = 1;
+            this.mtbxNameProduct.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mtbxNameProduct.CustomButton.UseSelectable = true;
+            this.mtbxNameProduct.CustomButton.Visible = false;
             this.mtbxNameProduct.Lines = new string[0];
             this.mtbxNameProduct.Location = new System.Drawing.Point(125, 79);
             this.mtbxNameProduct.MaxLength = 32767;
@@ -182,9 +195,14 @@
             this.mtbxNameProduct.PasswordChar = '\0';
             this.mtbxNameProduct.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtbxNameProduct.SelectedText = "";
+            this.mtbxNameProduct.SelectionLength = 0;
+            this.mtbxNameProduct.SelectionStart = 0;
+            this.mtbxNameProduct.ShortcutsEnabled = true;
             this.mtbxNameProduct.Size = new System.Drawing.Size(147, 23);
             this.mtbxNameProduct.TabIndex = 1;
             this.mtbxNameProduct.UseSelectable = true;
+            this.mtbxNameProduct.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mtbxNameProduct.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLabel4
             // 
@@ -208,6 +226,18 @@
             // 
             // mtbxPrice
             // 
+            // 
+            // 
+            // 
+            this.mtbxPrice.CustomButton.Image = null;
+            this.mtbxPrice.CustomButton.Location = new System.Drawing.Point(134, 1);
+            this.mtbxPrice.CustomButton.Name = "";
+            this.mtbxPrice.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mtbxPrice.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mtbxPrice.CustomButton.TabIndex = 1;
+            this.mtbxPrice.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mtbxPrice.CustomButton.UseSelectable = true;
+            this.mtbxPrice.CustomButton.Visible = false;
             this.mtbxPrice.Lines = new string[0];
             this.mtbxPrice.Location = new System.Drawing.Point(360, 29);
             this.mtbxPrice.MaxLength = 32767;
@@ -215,12 +245,29 @@
             this.mtbxPrice.PasswordChar = '\0';
             this.mtbxPrice.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtbxPrice.SelectedText = "";
+            this.mtbxPrice.SelectionLength = 0;
+            this.mtbxPrice.SelectionStart = 0;
+            this.mtbxPrice.ShortcutsEnabled = true;
             this.mtbxPrice.Size = new System.Drawing.Size(156, 23);
             this.mtbxPrice.TabIndex = 2;
             this.mtbxPrice.UseSelectable = true;
+            this.mtbxPrice.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mtbxPrice.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // mtbxStock
             // 
+            // 
+            // 
+            // 
+            this.mtbxStock.CustomButton.Image = null;
+            this.mtbxStock.CustomButton.Location = new System.Drawing.Point(132, 1);
+            this.mtbxStock.CustomButton.Name = "";
+            this.mtbxStock.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mtbxStock.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mtbxStock.CustomButton.TabIndex = 1;
+            this.mtbxStock.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mtbxStock.CustomButton.UseSelectable = true;
+            this.mtbxStock.CustomButton.Visible = false;
             this.mtbxStock.Lines = new string[0];
             this.mtbxStock.Location = new System.Drawing.Point(362, 80);
             this.mtbxStock.MaxLength = 32767;
@@ -228,9 +275,14 @@
             this.mtbxStock.PasswordChar = '\0';
             this.mtbxStock.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtbxStock.SelectedText = "";
+            this.mtbxStock.SelectionLength = 0;
+            this.mtbxStock.SelectionStart = 0;
+            this.mtbxStock.ShortcutsEnabled = true;
             this.mtbxStock.Size = new System.Drawing.Size(154, 23);
             this.mtbxStock.TabIndex = 3;
             this.mtbxStock.UseSelectable = true;
+            this.mtbxStock.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mtbxStock.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLabel6
             // 
@@ -261,6 +313,18 @@
             // 
             // mtbxFindProduct
             // 
+            // 
+            // 
+            // 
+            this.mtbxFindProduct.CustomButton.Image = null;
+            this.mtbxFindProduct.CustomButton.Location = new System.Drawing.Point(134, 1);
+            this.mtbxFindProduct.CustomButton.Name = "";
+            this.mtbxFindProduct.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mtbxFindProduct.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mtbxFindProduct.CustomButton.TabIndex = 1;
+            this.mtbxFindProduct.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mtbxFindProduct.CustomButton.UseSelectable = true;
+            this.mtbxFindProduct.CustomButton.Visible = false;
             this.mtbxFindProduct.Lines = new string[0];
             this.mtbxFindProduct.Location = new System.Drawing.Point(612, 80);
             this.mtbxFindProduct.MaxLength = 32767;
@@ -268,9 +332,14 @@
             this.mtbxFindProduct.PasswordChar = '\0';
             this.mtbxFindProduct.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtbxFindProduct.SelectedText = "";
+            this.mtbxFindProduct.SelectionLength = 0;
+            this.mtbxFindProduct.SelectionStart = 0;
+            this.mtbxFindProduct.ShortcutsEnabled = true;
             this.mtbxFindProduct.Size = new System.Drawing.Size(156, 23);
             this.mtbxFindProduct.TabIndex = 5;
             this.mtbxFindProduct.UseSelectable = true;
+            this.mtbxFindProduct.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mtbxFindProduct.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // mbtnFind
             // 
@@ -327,6 +396,18 @@
             // 
             // mtbxProductType
             // 
+            // 
+            // 
+            // 
+            this.mtbxProductType.CustomButton.Image = null;
+            this.mtbxProductType.CustomButton.Location = new System.Drawing.Point(125, 1);
+            this.mtbxProductType.CustomButton.Name = "";
+            this.mtbxProductType.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mtbxProductType.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mtbxProductType.CustomButton.TabIndex = 1;
+            this.mtbxProductType.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mtbxProductType.CustomButton.UseSelectable = true;
+            this.mtbxProductType.CustomButton.Visible = false;
             this.mtbxProductType.Lines = new string[0];
             this.mtbxProductType.Location = new System.Drawing.Point(125, 28);
             this.mtbxProductType.MaxLength = 32767;
@@ -334,9 +415,14 @@
             this.mtbxProductType.PasswordChar = '\0';
             this.mtbxProductType.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtbxProductType.SelectedText = "";
+            this.mtbxProductType.SelectionLength = 0;
+            this.mtbxProductType.SelectionStart = 0;
+            this.mtbxProductType.ShortcutsEnabled = true;
             this.mtbxProductType.Size = new System.Drawing.Size(147, 23);
             this.mtbxProductType.TabIndex = 17;
             this.mtbxProductType.UseSelectable = true;
+            this.mtbxProductType.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mtbxProductType.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // frmBuying
             // 

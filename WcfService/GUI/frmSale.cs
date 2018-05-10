@@ -85,9 +85,17 @@ namespace GUI
             this.dgvListProducts.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             this.dgvListProducts.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
-
+        /******************************************
+         /** Description: Process when clicked node
+         /** Params: 
+         /** Write by: VO MINH KHOI
+         /** Create date: 4/5/2018
+         ******************************************/
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            this.Close();
+            frmLogin frmlogin = new frmLogin();
+            frmlogin.Show();
         }
         /******************************************
          /** Description: Process when clicked node

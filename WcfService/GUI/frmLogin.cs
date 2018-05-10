@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using BLL;
+using GUI;
 
 namespace GUI
 {
@@ -68,11 +69,13 @@ namespace GUI
             {
                 if(this.mtbxUserName.Text == "admin")
                 {
+                    this.Hide();
                     frmSale frmsale = new frmSale();
                     frmsale.Show();
                 }
                 else
                 {
+                    this.Hide();
                     frmBuying frmbuying = new frmBuying();
                     frmbuying.Show();
                 }
