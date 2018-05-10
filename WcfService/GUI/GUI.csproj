@@ -32,14 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MetroFramework">
-      <HintPath>C:\Users\AJackTi\Desktop\PROGRAMING\PROGRAMING\C#\Framework\metroframework\MetroFramework.dll</HintPath>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
-    <Reference Include="MetroFramework.Design">
-      <HintPath>C:\Users\AJackTi\Desktop\PROGRAMING\PROGRAMING\C#\Framework\metroframework\MetroFramework.Design.dll</HintPath>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
     </Reference>
-    <Reference Include="MetroFramework.Fonts">
-      <HintPath>C:\Users\AJackTi\Desktop\PROGRAMING\PROGRAMING\C#\Framework\metroframework\MetroFramework.Fonts.dll</HintPath>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -133,6 +133,9 @@
       <Project>{e029d62d-2b5a-4634-b050-9e124fee96ff}</Project>
       <Name>MyProperties</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
