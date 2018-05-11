@@ -16,11 +16,15 @@ namespace GUI
     public partial class frmBuying : MetroForm
     {
         private BLL.CheckBusineesRuleProduct bllBusineesRuleProduct;
+        private BLL.CheckBusinessRuleOrder businessRuleOrder;
         private List<ProductsObj> cart;
-        public frmBuying()
+        private int userID;
+        public frmBuying(int userid)
         {
             bllBusineesRuleProduct = new CheckBusineesRuleProduct();
+            businessRuleOrder = new CheckBusinessRuleOrder();
             cart = new List<ProductsObj>();
+            userID = userid;
             InitializeComponent();
         }
 
@@ -82,6 +86,7 @@ namespace GUI
                 List<ProductsObj> listProductObj = bllBusineesRuleProduct.GetProductFromType(e.Node.Text);
                 DisplayToDataGrid(listProductObj);
                 this.mtbxProductType.Text = e.Node.Text;
+                mbtnPurchare.Enabled = false;
             }
         }
 
@@ -178,6 +183,35 @@ namespace GUI
         private void btnMyCart_Click(object sender, EventArgs e)
         {
             DisplayToDataGrid(cart);
+            if(cart.Count > 0) mbtnPurchare.Enabled = true;
+        }
+
+        private void mbtnPurchare_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OrdersObj o = new OrdersObj();
+                o.CustomerIDObj = userID;
+                o.OrderDateObj = DateTime.Now;
+                o.EmployeeIDObj = 1;
+                int id = businessRuleOrder.AddOrder(o);
+
+                foreach (ProductsObj p in cart)
+                {
+                    OrderDetailsObj od = new OrderDetailsObj();
+                    od.OrderIDObj = id;
+                    od.ProductIDObj = p.ProductIDObj;
+                    od.QuantityObj = 1;
+                    od.UnitPriceObj = p.UnitPriceObj;
+                    businessRuleOrder.AddOrderDetail(od);
+                }
+                cart = new List<ProductsObj>();
+                MessageBox.Show("Order Success!");
+            }
+            catch
+            {
+
+            }
         }
     }
 }

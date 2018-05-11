@@ -10,4 +10,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProductsObj" nillable="true" type="tns:ProductsObj" />
+  <xs:complexType name="OrdersObj">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerIDObj" type="xs:int" />
+      <xs:element minOccurs="0" name="EmployeeIDObj" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderDateObj" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderIDObj" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrdersObj" nillable="true" type="tns:OrdersObj" />
+  <xs:complexType name="OrderDetailsObj">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OrderIDObj" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductIDObj" type="xs:int" />
+      <xs:element minOccurs="0" name="QuantityObj" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitPriceObj" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderDetailsObj" nillable="true" type="tns:OrderDetailsObj" />
 </xs:schema>

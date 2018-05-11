@@ -89,10 +89,15 @@ namespace WcfService
             return data.Orders.ToList();
         }
 
-        public void AddOrder(Order order)
+        public int AddOrder(OrdersObj order)
         {
-            data.Orders.InsertOnSubmit(order);
+            Order o = new Order();
+            o.CustomerID = order.CustomerIDObj;
+            o.OrderDate = DateTime.Now;
+            o.EmployeeID = 1;
+            data.Orders.InsertOnSubmit(o);
             data.SubmitChanges();
+            return o.OrderID;
         }
 
         public void DeleteOrder(int id)
@@ -117,9 +122,14 @@ namespace WcfService
             return data.OrderDetails.ToList();
         }
 
-        public void AddOrderDetail(OrderDetail orderdetail)
+        public void AddOrderDetail(OrderDetailsObj orderdetail)
         {
-            data.OrderDetails.InsertOnSubmit(orderdetail);
+            OrderDetail o = new OrderDetail();
+            o.OrderID = orderdetail.OrderIDObj;
+            o.ProductID = orderdetail.ProductIDObj;
+            o.Quantity = orderdetail.QuantityObj;
+            o.UnitPrice = orderdetail.UnitPriceObj;
+            data.OrderDetails.InsertOnSubmit(o);
             data.SubmitChanges();
         }
 
@@ -140,12 +150,13 @@ namespace WcfService
             data.SubmitChanges();
         }
 
-        public bool CheckLogin(string username, string password)
+        public int CheckLogin(string username, string password)
         {
-            var item = data.Logins.Where(t => t.UserName == username).FirstOrDefault();
-            if (item.Password == password)
-                return true;
-            return false;
+            var login = from l in data.Logins where l.UserName == username select l;
+            if (login.FirstOrDefault().Password == password)
+                return (from i in login join c in data.Customers on i.UserID equals c.UserID
+                       select c).FirstOrDefault().CustomerID;
+            return -1;
         }
     }
 }

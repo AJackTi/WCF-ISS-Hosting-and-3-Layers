@@ -65,7 +65,8 @@ namespace GUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(checkBusineesRuleLogins.CheckLogin(this.mtbxUserName.Text, this.mtbxPassword.Text))
+            int userId = checkBusineesRuleLogins.CheckLogin(this.mtbxUserName.Text, this.mtbxPassword.Text);
+            if (userId != -1)
             {
                 if(this.mtbxUserName.Text == "admin")
                 {
@@ -76,7 +77,7 @@ namespace GUI
                 else
                 {
                     this.Hide();
-                    frmBuying frmbuying = new frmBuying();
+                    frmBuying frmbuying = new frmBuying(userId);
                     frmbuying.Show();
                 }
             }

@@ -29,7 +29,7 @@ namespace WcfService
         [OperationContract]
         List<Order> GetAllOrder();
         [OperationContract]
-        void AddOrder(Order order);
+        int AddOrder(OrdersObj order);
         [OperationContract]
         void DeleteOrder(int id);
         [OperationContract]
@@ -37,13 +37,13 @@ namespace WcfService
         [OperationContract]
         List<OrderDetail> GetAllOrderDetail();
         [OperationContract]
-        void AddOrderDetail(OrderDetail orderdetail);
+        void AddOrderDetail(OrderDetailsObj orderdetail);
         [OperationContract]
         void DeleteOrderDetail(int id);
         [OperationContract]
         void UpdateOrderDetail(OrderDetail orderdetail);
 
         [OperationContract]
-        bool CheckLogin(string username, string password);
+        int CheckLogin(string username, string password);
     }
 }

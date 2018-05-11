@@ -919,10 +919,10 @@ namespace DAL.ServiceReference {
         System.Threading.Tasks.Task<DAL.ServiceReference.Order[]> GetAllOrderAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddOrder", ReplyAction="http://tempuri.org/IService1/AddOrderResponse")]
-        void AddOrder(DAL.ServiceReference.Order order);
+        int AddOrder(MyProperties.OrdersObj order);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddOrder", ReplyAction="http://tempuri.org/IService1/AddOrderResponse")]
-        System.Threading.Tasks.Task AddOrderAsync(DAL.ServiceReference.Order order);
+        System.Threading.Tasks.Task<int> AddOrderAsync(MyProperties.OrdersObj order);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteOrder", ReplyAction="http://tempuri.org/IService1/DeleteOrderResponse")]
         void DeleteOrder(int id);
@@ -943,10 +943,10 @@ namespace DAL.ServiceReference {
         System.Threading.Tasks.Task<DAL.ServiceReference.OrderDetail[]> GetAllOrderDetailAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddOrderDetail", ReplyAction="http://tempuri.org/IService1/AddOrderDetailResponse")]
-        void AddOrderDetail(DAL.ServiceReference.OrderDetail orderdetail);
+        void AddOrderDetail(MyProperties.OrderDetailsObj orderdetail);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddOrderDetail", ReplyAction="http://tempuri.org/IService1/AddOrderDetailResponse")]
-        System.Threading.Tasks.Task AddOrderDetailAsync(DAL.ServiceReference.OrderDetail orderdetail);
+        System.Threading.Tasks.Task AddOrderDetailAsync(MyProperties.OrderDetailsObj orderdetail);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteOrderDetail", ReplyAction="http://tempuri.org/IService1/DeleteOrderDetailResponse")]
         void DeleteOrderDetail(int id);
@@ -961,10 +961,10 @@ namespace DAL.ServiceReference {
         System.Threading.Tasks.Task UpdateOrderDetailAsync(DAL.ServiceReference.OrderDetail orderdetail);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CheckLogin", ReplyAction="http://tempuri.org/IService1/CheckLoginResponse")]
-        bool CheckLogin(string username, string password);
+        int CheckLogin(string username, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CheckLogin", ReplyAction="http://tempuri.org/IService1/CheckLoginResponse")]
-        System.Threading.Tasks.Task<bool> CheckLoginAsync(string username, string password);
+        System.Threading.Tasks.Task<int> CheckLoginAsync(string username, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1050,11 +1050,11 @@ namespace DAL.ServiceReference {
             return base.Channel.GetAllOrderAsync();
         }
         
-        public void AddOrder(DAL.ServiceReference.Order order) {
-            base.Channel.AddOrder(order);
+        public int AddOrder(MyProperties.OrdersObj order) {
+            return base.Channel.AddOrder(order);
         }
         
-        public System.Threading.Tasks.Task AddOrderAsync(DAL.ServiceReference.Order order) {
+        public System.Threading.Tasks.Task<int> AddOrderAsync(MyProperties.OrdersObj order) {
             return base.Channel.AddOrderAsync(order);
         }
         
@@ -1082,11 +1082,11 @@ namespace DAL.ServiceReference {
             return base.Channel.GetAllOrderDetailAsync();
         }
         
-        public void AddOrderDetail(DAL.ServiceReference.OrderDetail orderdetail) {
+        public void AddOrderDetail(MyProperties.OrderDetailsObj orderdetail) {
             base.Channel.AddOrderDetail(orderdetail);
         }
         
-        public System.Threading.Tasks.Task AddOrderDetailAsync(DAL.ServiceReference.OrderDetail orderdetail) {
+        public System.Threading.Tasks.Task AddOrderDetailAsync(MyProperties.OrderDetailsObj orderdetail) {
             return base.Channel.AddOrderDetailAsync(orderdetail);
         }
         
@@ -1106,11 +1106,11 @@ namespace DAL.ServiceReference {
             return base.Channel.UpdateOrderDetailAsync(orderdetail);
         }
         
-        public bool CheckLogin(string username, string password) {
+        public int CheckLogin(string username, string password) {
             return base.Channel.CheckLogin(username, password);
         }
         
-        public System.Threading.Tasks.Task<bool> CheckLoginAsync(string username, string password) {
+        public System.Threading.Tasks.Task<int> CheckLoginAsync(string username, string password) {
             return base.Channel.CheckLoginAsync(username, password);
         }
     }

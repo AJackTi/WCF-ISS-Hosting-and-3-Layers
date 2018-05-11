@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CheckBusineesRuleLogins.cs" />
     <Compile Include="CheckBusineesRuleProduct.cs" />
+    <Compile Include="CheckBusinessRuleOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

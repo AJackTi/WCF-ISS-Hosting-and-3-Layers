@@ -7,17 +7,23 @@ using MyProperties;
 
 namespace DAL
 {
-    public class CRUDLogins
+    public class CRUDOrder
     {
         ServiceReference.Service1Client obj;
-        public CRUDLogins()
+        public CRUDOrder()
         {
             obj = new ServiceReference.Service1Client();
         }
-
-        public int CheckLogin(string username, string password)
+        
+        public int AddOrder(OrdersObj o)
         {
-            return obj.CheckLogin(username, password);
+            return obj.AddOrder(o);
+        }
+
+        public void AddOrderDetail(OrderDetailsObj o)
+        {
+                obj.AddOrderDetail(o);
+            
         }
     }
 }

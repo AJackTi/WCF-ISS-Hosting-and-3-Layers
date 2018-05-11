@@ -93,13 +93,15 @@
   <xs:element name="AddOrder">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="order" nillable="true" type="q7:Order" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MyProperties" minOccurs="0" name="order" nillable="true" type="q7:OrdersObj" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddOrderResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddOrderResult" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DeleteOrder">
@@ -141,7 +143,7 @@
   <xs:element name="AddOrderDetail">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="orderdetail" nillable="true" type="q10:OrderDetail" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/MyProperties" minOccurs="0" name="orderdetail" nillable="true" type="q10:OrderDetailsObj" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -185,7 +187,7 @@
   <xs:element name="CheckLoginResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="CheckLoginResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="CheckLoginResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

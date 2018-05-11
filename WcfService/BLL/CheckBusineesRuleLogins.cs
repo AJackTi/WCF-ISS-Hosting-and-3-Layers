@@ -15,7 +15,7 @@ namespace BLL
         {
             crudLogins = new CRUDLogins();
         }
-        public bool CheckLogin(string username, string password)
+        public int CheckLogin(string username, string password)
         {
             return crudLogins.CheckLogin(username, password);
         }

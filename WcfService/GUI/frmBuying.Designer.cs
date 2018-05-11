@@ -125,12 +125,14 @@
             // 
             // mbtnPurchare
             // 
+            this.mbtnPurchare.Enabled = false;
             this.mbtnPurchare.Location = new System.Drawing.Point(248, 561);
             this.mbtnPurchare.Name = "mbtnPurchare";
             this.mbtnPurchare.Size = new System.Drawing.Size(121, 23);
             this.mbtnPurchare.TabIndex = 8;
-            this.mbtnPurchare.Text = "Purchase";
+            this.mbtnPurchare.Text = "Order";
             this.mbtnPurchare.UseSelectable = true;
+            this.mbtnPurchare.Click += new System.EventHandler(this.mbtnPurchare_Click);
             // 
             // mbtnExit
             // 
