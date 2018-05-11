@@ -37,7 +37,6 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.btnAdd = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
             this.btnUpdate = new MetroFramework.Controls.MetroButton();
@@ -50,7 +49,6 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.mtbxProductType = new MetroFramework.Controls.MetroTextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.mbtnFind = new MetroFramework.Controls.MetroButton();
             this.mtbxFindProduct = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
@@ -59,7 +57,6 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -113,9 +110,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(965, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 15);
+            this.label1.Size = new System.Drawing.Size(19, 15);
             this.label1.TabIndex = 3;
-            this.label1.Text = "I\'m";
+            this.label1.Text = "Hi";
             // 
             // metroLabel2
             // 
@@ -156,16 +153,6 @@
             this.metroLabel6.Size = new System.Drawing.Size(42, 19);
             this.metroLabel6.TabIndex = 6;
             this.metroLabel6.Text = "Stock";
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel7.Location = new System.Drawing.Point(606, 28);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(63, 19);
-            this.metroLabel7.TabIndex = 6;
-            this.metroLabel7.Text = "Quantity";
             // 
             // btnAdd
             // 
@@ -232,6 +219,18 @@
             // 
             // mtbxNameProduct
             // 
+            // 
+            // 
+            // 
+            this.mtbxNameProduct.CustomButton.Image = null;
+            this.mtbxNameProduct.CustomButton.Location = new System.Drawing.Point(157, 1);
+            this.mtbxNameProduct.CustomButton.Name = "";
+            this.mtbxNameProduct.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mtbxNameProduct.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mtbxNameProduct.CustomButton.TabIndex = 1;
+            this.mtbxNameProduct.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mtbxNameProduct.CustomButton.UseSelectable = true;
+            this.mtbxNameProduct.CustomButton.Visible = false;
             this.mtbxNameProduct.Lines = new string[0];
             this.mtbxNameProduct.Location = new System.Drawing.Point(115, 69);
             this.mtbxNameProduct.MaxLength = 32767;
@@ -239,12 +238,29 @@
             this.mtbxNameProduct.PasswordChar = '\0';
             this.mtbxNameProduct.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtbxNameProduct.SelectedText = "";
+            this.mtbxNameProduct.SelectionLength = 0;
+            this.mtbxNameProduct.SelectionStart = 0;
+            this.mtbxNameProduct.ShortcutsEnabled = true;
             this.mtbxNameProduct.Size = new System.Drawing.Size(179, 23);
             this.mtbxNameProduct.TabIndex = 1;
             this.mtbxNameProduct.UseSelectable = true;
+            this.mtbxNameProduct.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mtbxNameProduct.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // mtbxStock
             // 
+            // 
+            // 
+            // 
+            this.mtbxStock.CustomButton.Image = null;
+            this.mtbxStock.CustomButton.Location = new System.Drawing.Point(157, 1);
+            this.mtbxStock.CustomButton.Name = "";
+            this.mtbxStock.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mtbxStock.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mtbxStock.CustomButton.TabIndex = 1;
+            this.mtbxStock.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mtbxStock.CustomButton.UseSelectable = true;
+            this.mtbxStock.CustomButton.Visible = false;
             this.mtbxStock.Lines = new string[0];
             this.mtbxStock.Location = new System.Drawing.Point(389, 69);
             this.mtbxStock.MaxLength = 32767;
@@ -252,12 +268,29 @@
             this.mtbxStock.PasswordChar = '\0';
             this.mtbxStock.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtbxStock.SelectedText = "";
+            this.mtbxStock.SelectionLength = 0;
+            this.mtbxStock.SelectionStart = 0;
+            this.mtbxStock.ShortcutsEnabled = true;
             this.mtbxStock.Size = new System.Drawing.Size(179, 23);
             this.mtbxStock.TabIndex = 3;
             this.mtbxStock.UseSelectable = true;
+            this.mtbxStock.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mtbxStock.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // mtbxPrice
             // 
+            // 
+            // 
+            // 
+            this.mtbxPrice.CustomButton.Image = null;
+            this.mtbxPrice.CustomButton.Location = new System.Drawing.Point(157, 1);
+            this.mtbxPrice.CustomButton.Name = "";
+            this.mtbxPrice.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mtbxPrice.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mtbxPrice.CustomButton.TabIndex = 1;
+            this.mtbxPrice.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mtbxPrice.CustomButton.UseSelectable = true;
+            this.mtbxPrice.CustomButton.Visible = false;
             this.mtbxPrice.Lines = new string[0];
             this.mtbxPrice.Location = new System.Drawing.Point(389, 26);
             this.mtbxPrice.MaxLength = 32767;
@@ -265,9 +298,14 @@
             this.mtbxPrice.PasswordChar = '\0';
             this.mtbxPrice.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtbxPrice.SelectedText = "";
+            this.mtbxPrice.SelectionLength = 0;
+            this.mtbxPrice.SelectionStart = 0;
+            this.mtbxPrice.ShortcutsEnabled = true;
             this.mtbxPrice.Size = new System.Drawing.Size(179, 23);
             this.mtbxPrice.TabIndex = 2;
             this.mtbxPrice.UseSelectable = true;
+            this.mtbxPrice.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mtbxPrice.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLabel1
             // 
@@ -291,6 +329,18 @@
             // 
             // mtbxProductType
             // 
+            // 
+            // 
+            // 
+            this.mtbxProductType.CustomButton.Image = null;
+            this.mtbxProductType.CustomButton.Location = new System.Drawing.Point(157, 1);
+            this.mtbxProductType.CustomButton.Name = "";
+            this.mtbxProductType.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mtbxProductType.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mtbxProductType.CustomButton.TabIndex = 1;
+            this.mtbxProductType.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mtbxProductType.CustomButton.UseSelectable = true;
+            this.mtbxProductType.CustomButton.Visible = false;
             this.mtbxProductType.Lines = new string[0];
             this.mtbxProductType.Location = new System.Drawing.Point(115, 26);
             this.mtbxProductType.MaxLength = 32767;
@@ -298,20 +348,18 @@
             this.mtbxProductType.PasswordChar = '\0';
             this.mtbxProductType.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtbxProductType.SelectedText = "";
+            this.mtbxProductType.SelectionLength = 0;
+            this.mtbxProductType.SelectionStart = 0;
+            this.mtbxProductType.ShortcutsEnabled = true;
             this.mtbxProductType.Size = new System.Drawing.Size(179, 23);
             this.mtbxProductType.TabIndex = 12;
             this.mtbxProductType.UseSelectable = true;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(675, 29);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(61, 21);
-            this.numericUpDown1.TabIndex = 13;
+            this.mtbxProductType.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mtbxProductType.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // mbtnFind
             // 
-            this.mbtnFind.Location = new System.Drawing.Point(869, 69);
+            this.mbtnFind.Location = new System.Drawing.Point(868, 24);
             this.mbtnFind.Name = "mbtnFind";
             this.mbtnFind.Size = new System.Drawing.Size(75, 23);
             this.mbtnFind.TabIndex = 15;
@@ -321,22 +369,39 @@
             // 
             // mtbxFindProduct
             // 
+            // 
+            // 
+            // 
+            this.mtbxFindProduct.CustomButton.Image = null;
+            this.mtbxFindProduct.CustomButton.Location = new System.Drawing.Point(157, 1);
+            this.mtbxFindProduct.CustomButton.Name = "";
+            this.mtbxFindProduct.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mtbxFindProduct.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mtbxFindProduct.CustomButton.TabIndex = 1;
+            this.mtbxFindProduct.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mtbxFindProduct.CustomButton.UseSelectable = true;
+            this.mtbxFindProduct.CustomButton.Visible = false;
             this.mtbxFindProduct.Lines = new string[0];
-            this.mtbxFindProduct.Location = new System.Drawing.Point(675, 69);
+            this.mtbxFindProduct.Location = new System.Drawing.Point(674, 24);
             this.mtbxFindProduct.MaxLength = 32767;
             this.mtbxFindProduct.Name = "mtbxFindProduct";
             this.mtbxFindProduct.PasswordChar = '\0';
             this.mtbxFindProduct.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtbxFindProduct.SelectedText = "";
+            this.mtbxFindProduct.SelectionLength = 0;
+            this.mtbxFindProduct.SelectionStart = 0;
+            this.mtbxFindProduct.ShortcutsEnabled = true;
             this.mtbxFindProduct.Size = new System.Drawing.Size(179, 23);
             this.mtbxFindProduct.TabIndex = 14;
             this.mtbxFindProduct.UseSelectable = true;
+            this.mtbxFindProduct.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mtbxFindProduct.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel8.Location = new System.Drawing.Point(606, 73);
+            this.metroLabel8.Location = new System.Drawing.Point(605, 28);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(35, 19);
             this.metroLabel8.TabIndex = 16;
@@ -352,7 +417,6 @@
             this.Controls.Add(this.mbtnFind);
             this.Controls.Add(this.mtbxFindProduct);
             this.Controls.Add(this.metroLabel8);
-            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.mtbxProductType);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.mtbxStock);
@@ -365,7 +429,6 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.metroLabel6);
-            this.Controls.Add(this.metroLabel7);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel2);
@@ -383,7 +446,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,7 +465,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel6;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroButton btnAdd;
         private MetroFramework.Controls.MetroButton btnDelete;
         private MetroFramework.Controls.MetroButton btnUpdate;
@@ -417,7 +478,6 @@
         private System.Windows.Forms.TreeView trvListProType;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroTextBox mtbxProductType;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private MetroFramework.Controls.MetroButton mbtnFind;
         private MetroFramework.Controls.MetroTextBox mtbxFindProduct;
         private MetroFramework.Controls.MetroLabel metroLabel8;
