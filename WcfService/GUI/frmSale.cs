@@ -215,6 +215,7 @@ namespace GUI
             productObj.UnitInStockObj = int.Parse( this.mtbxStock.Text);
             // thieu ID
             bllBusineesRuleProduct.AddProduct(productObj);
+            DisplayToDataGrid(bllBusineesRuleProduct.GetAllProduct());
         }
 
         void UpdateProduct()

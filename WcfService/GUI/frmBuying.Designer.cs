@@ -121,6 +121,7 @@
             this.mbtnBuying.TabIndex = 7;
             this.mbtnBuying.Text = "Add to Cart";
             this.mbtnBuying.UseSelectable = true;
+            this.mbtnBuying.Click += new System.EventHandler(this.mbtnBuying_Click);
             // 
             // mbtnPurchare
             // 
@@ -350,9 +351,10 @@
             this.btnMyCart.Name = "btnMyCart";
             this.btnMyCart.Size = new System.Drawing.Size(109, 46);
             this.btnMyCart.TabIndex = 15;
-            this.btnMyCart.Text = "My Cart";
+            this.btnMyCart.Text = "My Cart ";
             this.btnMyCart.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMyCart.UseVisualStyleBackColor = true;
+            this.btnMyCart.Click += new System.EventHandler(this.btnMyCart_Click);
             // 
             // metroLabel2
             // 

@@ -16,9 +16,11 @@ namespace GUI
     public partial class frmBuying : MetroForm
     {
         private BLL.CheckBusineesRuleProduct bllBusineesRuleProduct;
+        private List<ProductsObj> cart;
         public frmBuying()
         {
             bllBusineesRuleProduct = new CheckBusineesRuleProduct();
+            cart = new List<ProductsObj>();
             InitializeComponent();
         }
 
@@ -150,6 +152,32 @@ namespace GUI
             this.Close();
             frmLogin frmlogin = new frmLogin();
             frmlogin.Show();
+        }
+
+        private void mbtnBuying_Click(object sender, EventArgs e)
+        {
+            int selectedRow;
+            try
+            {
+                selectedRow = this.dgvListProducts.CurrentCell.RowIndex;
+            }
+            catch
+            {
+                selectedRow = 0;
+            }
+            ProductsObj productObj = new ProductsObj();
+            productObj.ProductIDObj = Int32.Parse(this.dgvListProducts.Rows[selectedRow].Cells[0].Value.ToString());
+            productObj.ProductNameObj = this.mtbxNameProduct.Text;
+            productObj.ProductTypeObj = this.mtbxProductType.Text;
+            productObj.UnitPriceObj = decimal.Parse(this.mtbxPrice.Text);
+            productObj.UnitInStockObj = int.Parse(this.mtbxStock.Text);
+            cart.Add(productObj);
+            btnMyCart.Text = "My Cart (" + cart.Count + ")";
+        }
+
+        private void btnMyCart_Click(object sender, EventArgs e)
+        {
+            DisplayToDataGrid(cart);
         }
     }
 }
