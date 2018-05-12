@@ -154,8 +154,13 @@ namespace WcfService
         {
             var login = from l in data.Logins where l.UserName == username select l;
             if (login.FirstOrDefault().Password == password)
-                return (from i in login join c in data.Customers on i.UserID equals c.UserID
-                       select c).FirstOrDefault().CustomerID;
+            {
+                var cus = (from i in login
+                           join c in data.Customers on i.UserID equals c.UserID
+                           select c).FirstOrDefault();
+                if (cus != null) return cus.CustomerID;
+                else return 0;
+            } 
             return -1;
         }
     }
